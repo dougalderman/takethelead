@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html ng-app="takeTheLead">
+
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="Take the Lead, Fort Lauderdale, Dog Training, Dog Walking">
+  	<meta name="description" content="Take the Lead Fort Lauderdale / An Individualized Guided Approach to Common Dog Walking Problems">
+	<meta name="language" content="english">
+
+    <title>Take The Lead Fort Lauderdale / An Individualized Guided Approach to Common Dog Walking Problems</title>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body id="top" ng-controller="mainCtrl">
+
+	<div class="container">
+
+		<div id="fixed_navbar" class="navbar" ng-show="waypoints.fixedNav.down">
+			<div class="name_navbar">
+				<a id="name-fixednav" href="#top" ng-click="deactivateMobileNavbar()">Take the Lead Fort Lauderdale</a>
+			</div>
+			<div class="ul_navbar">
+				<ul>
+					<li><a id="projects-fixednav" href="#projects" ng-class="{highlight: waypoints.inProjects.down}">Projects</a></li>
+					<li><a id="about-fixednav" href="#about" ng-class="{highlight: waypoints.inAbout.down}">About</a></li>
+					<li><a id="contact-fixednav" href="#contact" ng-class="{highlight: waypoints.inContact.down}">Contact</a></li>
+				</ul>
+			</div>
+			<div class="mobile_navbar_icon" ng-click="activateMobileNavbar()">
+				&#9776;
+			</div>
+		</div>
+
+		<div id="mobile_navbar" ng-show="mobileNavbarSelected" ng-click="deactivateMobileNavbar()">
+			<ul>
+				<li><a id="projects-mobilenav" href="#projects" ng-class="{highlight: waypoints.inProjects.down}" >Projects</a></li>
+				<li><a id="about-mobilenav" href="#about" ng-class="{highlight: waypoints.inAbout.down}">About</a></li>
+				<li><a id="contact-mobilenav" href="#contact" ng-class="{highlight: waypoints.inContact.down}">Contact</a></li>
+			</ul>
+		</div>
+
+		<div class="intro">
+
+			<!--Picturefill image display-->
+			<picture>
+  				<source srcset="images/Salt_Lake_City_reduced.jpg" media="(max-width: 600px)">
+  				<img class="intro_background" srcset=" images/Salt_Lake_City.jpg" alt="Salt Lake City">
+			</picture>
+
+			<div class="pic_text">
+				<div id="pic_navbar" class="navbar" ng-hide="waypoints.fixedNav.down">
+					<div class="name_navbar">
+						<a id="name-pic" href="#top" ng-click="deactivateMobileNavbar()">Doug Alderman</a>
+					</div>
+					<div class="ul_navbar">
+						<ul>
+							<li><a id="projects-pic" href="#projects">Projects</a></li>
+							<li><a id="about-pic" href="#about">About</a></li>
+							<li><a id="contact-pic" href="#contact">Contact</a></li>
+						</ul>
+					</div>
+					<div class="mobile_navbar_icon" ng-click="activateMobileNavbar()">
+						&#9776;
+					</div>
+				</div>
+				<h1 class="line_one">Experienced Salt Lake City Developer</h1>
+				<h2 class="line_two">Specializing in MEAN Full-Stack Web Development</h2>
+				<h1 class="mobile_line_one">Experienced Salt Lake Web Dev</h1>
+				<h2 class="mobile_line_two">Specializing in MEAN Full Stack</h2>
+			</div>
+		</div>
+
+		<div class="main_content">
+			<!-- Page Content goes here -->
+			<div zum-waypoint="waypoints"
+				down="fixedNav.down"
+				up="fixedNav.up"
+				offset="20%">
+			</div>
+			<div id="projects" class="showcase" zum-waypoint="waypoints" down="inProjects.down" up="inProjects.up" offset="10%">
+				<h3>Projects</h3>
+			</div>
+			<div zum-waypoint="waypoints" down="inProjects.up" up="inProjects.down" offset="10%"></div>
+			<div id="about" class="showcase" zum-waypoint="waypoints" down="inAbout.down" up="inAbout.up" offset="10%">
+				<h3>About Doug</h3>
+				<img class="doug-photo" ng-src="images/doug_photo.jpg">
+				<p>Doug Alderman is an Angular web developer contractor, currently working with a Salt Lake City client. Doug graduated from <a href="https://devmounta.in/web-immersive" target="_blank">DevMountain</a> web programmer immersive bootcamp program in March 2016. He acquired full stack developer skills focusing on the Javascript-based <a href="http://mean.io/#!/" target="_blank">MEAN</a> stack (Mongo Database, Express Server, Angular Front End, and Node environment).</p><br>
+				<p>Doug grew up in the New York City area, and attended college at University of Virginia and University of Utah. Doug was an experienced developer working with IBM 4690 point-of-sale (POS) registers. He worked for companies such as American Stores / Albertsons, Thrify Drug Stores, and Linens 'N Things. Doug was promoted to a senior system analyst position at Albertsons. He has lived in Utah for over 15 years.</p>
+				<p class="fltlft">See Doug's resume:</p>
+				<a href="pdfs/Doug_Alderman_Resume_Website.pdf"><img ng-src="images/pdf-icon.jpg" height="50"></a>
+
+			</div>
+			<div zum-waypoint="waypoints" down="inAbout.up" up="inAbout.down" offset="10%"></div>
+			<div id="contact" class="showcase" zum-waypoint="waypoints" down="inContact.down" up="inContact.up" offset="10%">
+				<h3>Contact Doug</h3>
+				<div class="icons">
+					<a href="https://www.linkedin.com/in/dougsalderman" target="_blank"><img ng-src="images/linkedin-icon.jpg" height="50"></a>
+					<a href="https://github.com/dougalderman" target="_blank"><img ng-src="images/octocat.jpg" height="50"></a>
+				</div>
+				<div class="contact-form-container">
+
+					<!--Picturefill image display-->
+					<picture>
+						<source srcset="images/Secret_Lake.jpg" media="(max-width: 562px)">
+						<img class="contact_background" srcset="images/Desolation_Lake.jpg" alt="Utah Mountains">
+					</picture>
+
+					<div class="contact-form">
+						<form ng-submit="contactForm()">
+							<div class="name">
+								<input id="name" type="text" ng-model="contact.name" placeholder="Name" required>
+							</div>
+							<div class="phone">
+								 <input id="phone" type="tel" ng-model="contact.phone" placeholder="Phone">
+							</div>
+							<div class="email">
+								 <input id="email" type="email" ng-model="contact.email" placeholder="Email" required>
+							</div>
+							<div class="email-again">
+								 <input id="email-again" type="email" ng-model="contact.emailAgain" placeholder="Re-enter Email" required>
+							</div>
+							<div class="match-error" ng-show="emailMatchError">
+                    			Emails don't match
+                			</div>
+							<div class="message">
+								 <textarea id="message" ng-model="contact.message" placeholder="Message" required></textarea>
+							</div>
+							<div class="submit" ng-hide="inRecaptcha">
+								<input class="button" type="submit" value="Submit">
+							</div>
+							<div id="recaptcha-widget" ng-show="inRecaptcha">
+							</div>
+							<div class="user-msg" ng-class="{green: formSuccess, red: !formSuccess}" ng-show="userMsg">
+								{{userMsg}}
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <!--<script src="https://code.angularjs.org/1.4.8/angular-animate.js"></script>-->
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.0/noframework.waypoints.min.js"></script>
+	<script src="bower_components/angular-waypoints/dist/angular-waypoints.min.js"></script>
+
+	<script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js "></script>
+	<script src="//cdn.jsdelivr.net/jquery.localscroll/1.4.0/jquery.localScroll.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js"></script>
+
+	<script src="js/app.js"></script>
+    <script src="js/mainCtrl.js"></script>
+    <script src="js/mainService.js"></script>
+
+	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
+    </script>
+
+</body>
+
+</html>
+
