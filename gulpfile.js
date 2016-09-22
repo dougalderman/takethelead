@@ -38,14 +38,14 @@ var inject          = require('gulp-inject');
 
 var config = {
   bower_components: [
-    'public/bower_components/angular-waypoints/dist/angular-waypoints.min.js'
+    'app/bower_components/angular-waypoints/dist/angular-waypoints.min.js'
   ],
-  js: ['public/js/**/*.js', 'public/js/*.js'],
-  bower: ['public/bower_components/**/*'],
-  img: ['public/images/*.*', 'app/images/**/*.*'],
-  views: ['public/views/*.*', 'app/views/**/*.*'],
-  css: ['public/css/*.css'],
-  sass: ['public/sass/*.scss'],
+  js: ['app/js/**/*.js', 'app/js/*.js'],
+  bower: ['app/bower_components/**/*'],
+  img: ['app/images/*.*', 'app/images/**/*.*'],
+  views: ['app/views/*.*', 'app/views/**/*.*'],
+  css: ['app/css/*.css'],
+  sass: ['app/sass/*.scss'],
   sassPartials: ['app/sass/_*.scss'],
   templates: ['app/pdfTemplates/**/*']
 };
@@ -90,7 +90,7 @@ gulp.task('jshint', function (done) {
 gulp.task('sass-dev', ['sasslint', 'clean-dev-css'], function (done) {
   return gulp .src(config.sass)
               .pipe(sass.sync().on('error', sass.logError))
-              .pipe(gulp.dest('public/css'));
+              .pipe(gulp.dest('app/css'));
 });
 
 gulp.task('sasslint', function() {
@@ -155,7 +155,7 @@ gulp.task('inject-dist', function() {
 
   var min = gulp.src(['./dist/js/takethelead.min.js', './dist/css/takethelead.min.css'], {read: false});
 
-  return gulp .src('public/index.html')
+  return gulp .src('app/index.html')
               .pipe(inject(gulp.src(config.bower_components, {read: false}), {name: 'vendors', ignorePath: 'app'}))
               .pipe(inject(min, {ignorePath: 'dist'}))
               .pipe(gulp.dest('dist'));
