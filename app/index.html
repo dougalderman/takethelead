@@ -12,13 +12,19 @@
 
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
-    <link rel="stylesheet" href="css/style.css">
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- endinject -->
 
 </head>
 
-<body id="top" ng-controller="mainCtrl">
+<body id="top" ng-controller="mainCtrl as Main">
 
 	<div class="container">
+
+        <h1 class="test1">Test variable: {{::test}}</h1>
+        <h1 class="test2">Test2 variable: {{::Main.test2}}</h1>
+
 
 		<div id="fixed_navbar" class="navbar" ng-show="waypoints.fixedNav.down">
 			<div class="name_navbar">
@@ -157,9 +163,11 @@
 	<script src="//cdn.jsdelivr.net/jquery.localscroll/1.4.0/jquery.localScroll.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js"></script>
 
-	<script src="js/app.js"></script>
-    <script src="js/mainCtrl.js"></script>
-    <script src="js/mainService.js"></script>
+	<!-- inject:js -->
+    <script src="/js/app.js"></script>
+    <script src="/js/mainCtrl.js"></script>
+    <script src="/js/mainService.js"></script>
+    <!-- endinject -->
 
 	<script src="https://www.google.com/recaptcha/api.js?onload=onloadCallback&render=explicit" async defer>
     </script>

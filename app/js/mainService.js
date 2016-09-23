@@ -5,7 +5,7 @@
 
    }
 
-   angular .module('theTheLead')
+   angular .module('takeTheLead')
            .service('mainService', ['$http', mainService]);
 
 }());

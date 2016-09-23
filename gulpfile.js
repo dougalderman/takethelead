@@ -19,6 +19,7 @@
 //---------------------------
 var gulp            = require('gulp');
 var open            = require('gulp-open');
+var livereload      = require('gulp-livereload');
 var runSequence     = require('run-sequence');
 var changed         = require('gulp-changed');
 var concat          = require('gulp-concat');
@@ -40,14 +41,13 @@ var config = {
   bower_components: [
     'app/bower_components/angular-waypoints/dist/angular-waypoints.min.js'
   ],
+  html: ['./app/index.html', './app/**/*.html'],
   js: ['app/js/**/*.js', 'app/js/*.js'],
   bower: ['app/bower_components/**/*'],
   img: ['app/images/*.*', 'app/images/**/*.*'],
-  views: ['app/views/*.*', 'app/views/**/*.*'],
   css: ['app/css/*.css'],
   sass: ['app/sass/*.scss'],
   sassPartials: ['app/sass/_*.scss'],
-  templates: ['app/pdfTemplates/**/*']
 };
 
 //---------------------------
@@ -56,22 +56,40 @@ var config = {
 
 gulp
   .task('start-server', function () {
+    livereload.listen();
     return nodemon({
       script: 'server/index.js',
-      watch: 'node_server',
+      watch: 'server',
       env: { 'NODE_ENV': 'development' }
     })
   .on('restart', function() {
     console.log('restarting server');
   });
-})
-
-gulp.task('clean-dev-css', function(done) {
-    return gulp
-            .src('app/css', {read: false})
-            .pipe(clean());
 });
 
+gulp.task('reload-browser', function () {
+  return gulp .src('./app/index.html')
+              .pipe(livereload());
+});
+
+gulp.task('clean-dev-css', function(done) {
+    return gulp .src('app/css', {read: false})
+                .pipe(clean());
+});
+
+gulp.task('js-dev', ['jshint']);
+
+gulp.task('inject-dev-index', function() {
+
+  var cssSources = gulp.src(config.css, {read: false});
+  var jsSources = gulp.src(config.js, {read: false});
+
+
+  return gulp .src('app/index.html')
+              .pipe(inject(cssSources, {ignorePath: 'app'}))
+              .pipe(inject(jsSources, {ignorePath: 'app'}))
+              .pipe(gulp.dest('app'));
+});
 
 //---------------------------
 // SCRIPT TASKS
@@ -79,7 +97,8 @@ gulp.task('clean-dev-css', function(done) {
 
 
 gulp.task('jshint', function (done) {
-  return gulp .pipe(jshint())
+  return gulp .src(config.js)
+              .pipe(jshint())
               .pipe(jshint.reporter('jshint-stylish'));
 });
 
@@ -118,7 +137,6 @@ gulp.task('clean-dist', function () {
 gulp.task('minify-js', function () {
   return gulp
     .src(config.js)
-    .pipe(angularFilesort())
     .pipe(concat('takethelead.min.js'))
     .pipe(sourcemaps.init())
     .pipe(uglify({mangle: false}))
@@ -151,17 +169,16 @@ gulp.task('copy-img', function() {
               .pipe(gulp.dest('dist/images'));
 });
 
-gulp.task('inject-dist', function() {
+gulp.task('inject-dist-index', function() {
 
   var min = gulp.src(['./dist/js/takethelead.min.js', './dist/css/takethelead.min.css'], {read: false});
 
   return gulp .src('app/index.html')
-              .pipe(inject(gulp.src(config.bower_components, {read: false}), {name: 'vendors', ignorePath: 'app'}))
               .pipe(inject(min, {ignorePath: 'dist'}))
               .pipe(gulp.dest('dist'));
 });
 
-gulp.task('copy-assets', ['copy-index', 'copy-bower', 'copy-img', 'copy-views', 'copy-manifest', 'copy-libs']);
+gulp.task('copy-assets', ['copy-index', 'copy-bower', 'copy-img']);
 
 gulp.task('js-dist', ['jshint', 'minify-js']);
 
@@ -174,8 +191,12 @@ gulp.task('css-dist', ['sasslint', 'minify-css']);
 
 gulp.task('watch', ['watch-dev-html', 'watch-dev-js', 'watch-dev-sass']);
 
+gulp.task('watch-dev-html', function(done) {
+  return gulp.watch(config.html, ['reload-browser']);
+});
+
 gulp.task('watch-dev-js', function(done) {
-  return gulp.watch(config.js, ['html']);
+  return gulp.watch(config.js, ['reload-browser']);
 });
 
 gulp.task('watch-dev-sass', function(done) {
@@ -183,7 +204,7 @@ gulp.task('watch-dev-sass', function(done) {
 });
 
 gulp.task('sass-after-watch', function(done) {
-  runSequence('sass-dev', 'html', done);
+  runSequence('sass-dev', 'reload-browser', done);
 });
 
 //---------------------------
@@ -191,9 +212,9 @@ gulp.task('sass-after-watch', function(done) {
 //---------------------------
 
 gulp.task('default', function(done) {
-  runSequence('dev-index', 'js-dev', 'sass-dev', 'inject-dev', ['watch','open'], done);
+  runSequence('js-dev', 'sass-dev', 'inject-dev-index', ['watch', 'start-server'], done);
 });
 
 gulp.task('dist', function(done) {
-  runSequence('clean-dist', 'js-dist', 'css-dist', 'copy-assets', 'inject-dist', done);
+  runSequence('clean-dist', 'js-dist', 'css-dist', 'copy-assets', 'inject-dist-index', done);
 });

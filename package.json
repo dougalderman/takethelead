@@ -18,6 +18,7 @@
   "homepage": "https://github.com/dougalderman/takethelead#readme",
   "dependencies": {
     "body-parser": "^1.15.2",
+    "dotenv": "^2.0.0",
     "express": "^4.14.0",
     "express-session": "^1.14.1",
     "mongoose": "^4.6.1"
@@ -30,6 +31,7 @@
     "gulp-concat": "^2.6.0",
     "gulp-inject": "^4.1.0",
     "gulp-jshint": "^2.0.1",
+    "gulp-livereload": "^3.8.1",
     "gulp-nodemon": "^2.1.0",
     "gulp-open": "^2.0.0",
     "gulp-sass": "^2.3.2",

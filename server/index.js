@@ -10,11 +10,13 @@ var express = require('express'),
 
 var app = express();
 
+var app_dir = process.env.TTL_APP_DIR;
+
 app.use(bodyParser.json());
 
-app.use(express.static(__dirname + '/../dist'));
+app.use(express.static(__dirname + process.env.TTL_APP_DIR));
 app.use(expressSession({
-    secret: process.env.DMJ_SECRET,
+    secret: process.env.TTL_SECRET,
     saveUninitialized: false,
     resave: false
 }));
@@ -29,8 +31,8 @@ app.use(expressSession({
 // app.post('/api/contacts/', contactsCtrl.create); // Create new contact. Contacts collection.
 
 //DB and Server Init
-var mongoUri = process.env.DMJ_MONGO_URI,
-    port = (process.env.port || process.env.DMJ_PORT);
+var mongoUri = process.env.TTL_MONGO_URI,
+    port = (process.env.port || process.env.TTL_PORT);
 
 mongoose.set('debug', true);
 mongoose.connect(mongoUri);
