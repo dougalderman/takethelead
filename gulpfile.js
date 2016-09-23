@@ -3,13 +3,42 @@
 | GULP BUILD SCRIPT
 |
 | TASKS:
-| - gulp watch - starts the browser sync server
-| - gulp lint - runs jslint
-| - gulp csslink - runs csslint
-| - gulp build - compiles a build for prod
+| - DEV TASKS:
+|    - start-server
+|    - reload-browser
+|    - clean-dev-css
+|    - js-dev
+|    - inject-dev-index
 |
-| TODO: Removed Template Cache - rewrite view, remove concat for dev watch
+| - SCRIPT TASKS:
+|    - jshint
 |
+| - STYLE TASKS:
+|    - sass-dev
+|    - sass-lint
+|
+| - DIST TASKS:
+|    - clean-dist
+|    - minify-js
+|    - minify-css
+|    - copy-bower
+|    - copy-index
+|    - copy-img
+|    - inject-dist-index
+|    - copy-assets
+|    - js-dist
+|    - css-dist
+|
+| - WATCHERS:
+|    - watch
+|    - watch-dev-html
+|    - watch-dev-js
+|    - watch-dev-sass
+|    - sass-after-watch
+|
+| - BUILD TASKS:
+|    - default
+|    - dist
 ----------------------------------------------------------------------------- */
 
 'use strict';
