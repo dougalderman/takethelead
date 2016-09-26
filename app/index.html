@@ -13,6 +13,8 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
 
     <!-- inject:css -->
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/navbar.css">
     <link rel="stylesheet" href="/css/style.css">
     <!-- endinject -->
 
@@ -20,37 +22,35 @@
 
 <body id="top" ng-controller="mainCtrl as Main">
 
-	<div class="container">
+  <div class="container">
 
-        <h1 class="test1">Test variable: {{::test}}</h1>
-        <h1 class="test2">Test2 variable: {{::Main.test2}}</h1>
-
-
-		<div id="fixed_navbar" class="navbar" ng-show="waypoints.fixedNav.down">
-			<div class="name_navbar">
-				<a id="name-fixednav" href="#top" ng-click="deactivateMobileNavbar()">Take the Lead Fort Lauderdale</a>
-			</div>
-			<div class="ul_navbar">
-				<ul>
-					<li><a id="projects-fixednav" href="#projects" ng-class="{highlight: waypoints.inProjects.down}">Projects</a></li>
-					<li><a id="about-fixednav" href="#about" ng-class="{highlight: waypoints.inAbout.down}">About</a></li>
-					<li><a id="contact-fixednav" href="#contact" ng-class="{highlight: waypoints.inContact.down}">Contact</a></li>
-				</ul>
-			</div>
-			<div class="mobile_navbar_icon" ng-click="activateMobileNavbar()">
+    <div id="fixed_navbar" class="navbar">
+      <div class="name_navbar">
+        <a id="name-fixednav" href="#top" ng-click="deactivateMobileNavbar()">Take the Lead Fort Lauderdale</a>
+      </div>
+      <div class="ul_navbar">
+        <ul>
+          <li><a id="about-ttl-fixednav" href="#about-ttl" ng-class="{highlight: waypoints.inAbout.down}">About Take The Lead</a></li>
+          <li><a id="bio-fixednav" href="#bio" ng-class="{highlight: waypoints.inBio.down}">About The Trainer</a></li>
+          <li><a id="services-fixednav" href="#services" ng-class="{highlight: waypoints.inServices.down}">Services and Pricing</a></li>
+          <li><a id="contact-fixednav" href="#contact" ng-class="{highlight: waypoints.inContact.down}">Contact</a></li>
+        </ul>
+      </div>
+      <div class="mobile_navbar_icon" ng-click="activateMobileNavbar()">
 				&#9776;
-			</div>
-		</div>
+      </div>
+    </div>
 
-		<div id="mobile_navbar" ng-show="mobileNavbarSelected" ng-click="deactivateMobileNavbar()">
-			<ul>
-				<li><a id="projects-mobilenav" href="#projects" ng-class="{highlight: waypoints.inProjects.down}" >Projects</a></li>
-				<li><a id="about-mobilenav" href="#about" ng-class="{highlight: waypoints.inAbout.down}">About</a></li>
-				<li><a id="contact-mobilenav" href="#contact" ng-class="{highlight: waypoints.inContact.down}">Contact</a></li>
-			</ul>
-		</div>
+    <div id="mobile_navbar" ng-show="mobileNavbarSelected" ng-click="deactivateMobileNavbar()">
+      <ul>
+        <li><a id="about-ttl-mobilenav" href="#about-ttl" ng-class="{highlight: waypoints.inAbout.down}">About Take The Lead</a></li>
+        <li><a id="bio-mobilenav" href="#bio" ng-class="{highlight: waypoints.inBio.down}">About The Trainer</a></li>
+        <li><a id="services-mobilenav" href="#services" ng-class="{highlight: waypoints.inServices.down}">Services and Pricing</a></li>
+        <li><a id="contact-mobilenav" href="#contact" ng-class="{highlight: waypoints.inContact.down}">Contact</a></li>
+      </ul>
+    </div>
 
-		<div class="intro">
+    <div class="intro">
 
 			<!--Picturefill image display-->
 			<picture>
@@ -59,21 +59,6 @@
 			</picture>
 
 			<div class="pic_text">
-				<div id="pic_navbar" class="navbar" ng-hide="waypoints.fixedNav.down">
-					<div class="name_navbar">
-						<a id="name-pic" href="#top" ng-click="deactivateMobileNavbar()">Doug Alderman</a>
-					</div>
-					<div class="ul_navbar">
-						<ul>
-							<li><a id="projects-pic" href="#projects">Projects</a></li>
-							<li><a id="about-pic" href="#about">About</a></li>
-							<li><a id="contact-pic" href="#contact">Contact</a></li>
-						</ul>
-					</div>
-					<div class="mobile_navbar_icon" ng-click="activateMobileNavbar()">
-						&#9776;
-					</div>
-				</div>
 				<h1 class="line_one">Experienced Salt Lake City Developer</h1>
 				<h2 class="line_two">Specializing in MEAN Full-Stack Web Development</h2>
 				<h1 class="mobile_line_one">Experienced Salt Lake Web Dev</h1>

@@ -1,0 +1,45 @@
+@import 'variables';
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial;
+  font-size: $browser-font-size;
+}
+
+.container {
+  max-width: 100vw;
+  font-size: $container-font-size;
+}
+
+p {
+  font-family: "Helvetica", sans-serif;
+  font-size: 1em;
+  margin-top: 0;
+}
+
+h3 {
+  font-family: "Arial";
+  font-size: 2.8em;
+  margin: 40px 0 60px 15px;
+  color: darkslateblue;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(0, 6, 255);
+}
+
+a:hover {
+  color: crimson;
+}
+
+.fltlft {
+  float: left;
+  margin-top: 10px;
+  margin-right: 10px;
+}
