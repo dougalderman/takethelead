@@ -1,16 +1,25 @@
 (function() {
   'use strict';
 
-  function mainCtrl($scope, mainService) {
+  function mainCtrl(mainService) {
 
     var ctrl = this;
 
-    $scope.test = "Tina Alderman";
+    ctrl.mobileNavbarSelected = false;
 
-    ctrl.test2 = "Doug Sanders Alderman";
+    ctrl.activateMobileNavbar = function() {
+      if (ctrl.mobileNavbarSelected === false)
+        ctrl.mobileNavbarSelected = true;
+      else // if Navbar is already active
+        ctrl.mobileNavbarSelected = false;
+	};
+
+	ctrl.deactivateMobileNavbar = function() {
+		ctrl.mobileNavbarSelected = false;
+	};
   }
 
   angular .module('takeTheLead')
-          .controller('mainCtrl', ['$scope','mainService', mainCtrl]);
+          .controller('mainCtrl', ['mainService', mainCtrl]);
 
 }());

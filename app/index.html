@@ -24,11 +24,11 @@
 
   <div class="container">
 
-    <div id="fixed_navbar" class="navbar">
-      <div class="name_navbar">
+    <div class="fixed-navbar">
+      <div class="name-navbar">
         <a id="name-fixednav" href="#top" ng-click="deactivateMobileNavbar()">Take the Lead Fort Lauderdale</a>
       </div>
-      <div class="ul_navbar">
+      <div class="ul-navbar">
         <ul>
           <li><a id="about-ttl-fixednav" href="#about-ttl" ng-class="{highlight: waypoints.inAbout.down}">About Take The Lead</a></li>
           <li><a id="bio-fixednav" href="#bio" ng-class="{highlight: waypoints.inBio.down}">About The Trainer</a></li>
@@ -36,12 +36,12 @@
           <li><a id="contact-fixednav" href="#contact" ng-class="{highlight: waypoints.inContact.down}">Contact</a></li>
         </ul>
       </div>
-      <div class="mobile_navbar_icon" ng-click="activateMobileNavbar()">
+      <div class="mobile-navbar-icon" ng-click="Main.activateMobileNavbar()">
 				&#9776;
       </div>
     </div>
 
-    <div id="mobile_navbar" ng-show="mobileNavbarSelected" ng-click="deactivateMobileNavbar()">
+    <div class="mobile-navbar" ng-show="Main.mobileNavbarSelected" ng-click="Main.deactivateMobileNavbar()">
       <ul>
         <li><a id="about-ttl-mobilenav" href="#about-ttl" ng-class="{highlight: waypoints.inAbout.down}">About Take The Lead</a></li>
         <li><a id="bio-mobilenav" href="#bio" ng-class="{highlight: waypoints.inBio.down}">About The Trainer</a></li>
@@ -50,19 +50,19 @@
       </ul>
     </div>
 
-    <div class="intro">
+    <div class="home">
 
 			<!--Picturefill image display-->
 			<picture>
-  				<source srcset="images/Salt_Lake_City_reduced.jpg" media="(max-width: 600px)">
-  				<img class="intro_background" srcset=" images/Salt_Lake_City.jpg" alt="Salt Lake City">
+  				<source srcset="images/Dusty&Red_640.jpg" media="(max-width: 640px)">
+                <source srcset="images/Dusty&Red_800.jpg" media="(max-width: 800px)">
+                <source srcset="images/Dusty&Red_1280.jpg" media="(max-width: 1280px)">
+  				<img class="intro_background" srcset=" images/Dusty&Red_1920.jpg" alt="Dusty & Red">
 			</picture>
 
 			<div class="pic_text">
-				<h1 class="line_one">Experienced Salt Lake City Developer</h1>
-				<h2 class="line_two">Specializing in MEAN Full-Stack Web Development</h2>
-				<h1 class="mobile_line_one">Experienced Salt Lake Web Dev</h1>
-				<h2 class="mobile_line_two">Specializing in MEAN Full Stack</h2>
+				<h1 class="line_one">“Take The Lead” offers an individualized guided approach to common dog walking problems.  Our methods are fluid and flexible adapting to owner and dogs individuality.</h1>
+				<h2 class="line_two">With a calm owner and dog, clear communication, structure, and consistency, you can create the relationship that you want so that your dog will naturally follow you as his pack leader.</h2>
 			</div>
 		</div>
 
@@ -146,7 +146,7 @@
 
 	<script src="//cdn.jsdelivr.net/jquery.scrollto/2.1.2/jquery.scrollTo.min.js "></script>
 	<script src="//cdn.jsdelivr.net/jquery.localscroll/1.4.0/jquery.localScroll.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.2/picturefill.min.js" async></script>
 
 	<!-- inject:js -->
     <script src="/js/app.js"></script>

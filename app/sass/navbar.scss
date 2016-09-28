@@ -1,19 +1,16 @@
 @import 'variables';
 
-#fixed-navbar {
+.fixed-navbar {
   background: $navbar-background;
   color: $navbar-color;
   position: fixed;
   z-index: 5;
-}
-
-.navbar {
   height: 5.833333em;
   line-height: 5.833333em;
   width: 100%;
 }
 
-.name_navbar {
+.name-navbar {
   position: absolute;
   left: 50px;
   font-size: 2em;
@@ -32,58 +29,58 @@
   color: $navbar-hover-highlight;
 }
 
-#name-fixednav.hightlight, #about-ttl-fixednav.highlight, #bio-fixednav.highlight, #services-fixednav.highlight, #contact-fixednav.highlight {
+#name-fixednav.highlight, #about-ttl-fixednav.highlight, #bio-fixednav.highlight, #services-fixednav.highlight, #contact-fixednav.highlight {
   color: $navbar-hover-highlight;
   text-decoration: underline;
 }
 
-.ul_navbar {
+.ul-navbar {
   position: absolute;
   right: 50px;
   font-size: 1.4em;
   height: inherit;
   line-height: inherit;
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    display: inline;
+    margin-left: 1.666667em;
+  }
 }
 
-.ul_navbar ul {
-  margin: 0;
-  padding: 0;
-}
-
-.ul_navbar li {
-  display: inline;
-  margin-left: 1.666667em;
-}
-
-.mobile_navbar_icon {
+.mobile-navbar-icon {
   display: none;
 }
 
-#mobile_navbar {
+.mobile-navbar {
   position: fixed;
-  left: 0.5em;
+  left: .5em;
   top: 8.333333em;
   font-family: Arial;
-  font-size: 1.2em;
+  font-size: 1.4em;
   z-index: 10;
-  background: black;
+  background: $navbar-background;
   width: 50%;
-}
 
-#mobile_navbar ul {
-  margin: 0;
-  padding: 0;
-}
+  ul {
+    margin: 0;
+    padding: 0;
+  }
 
-#mobile_navbar li {
-  display: block;
-  margin-top: 2.5em;
-  margin-bottom: 2.5em;
-  margin-left: 1.666667em;
+  li {
+    display: block;
+    margin-top: 2.5em;
+    margin-bottom: 2.5em;
+    margin-left: 1.666667em;
+  }
 }
 
 #about-ttl-mobilenav, #bio-mobilenav, #services-mobilenav, #contact-mobilenav {
-  color: white;
+  color: $navbar-color;
 }
 
 #about-ttl-mobilenav:hover, #bio-mobilenav:hover, #services-mobilenav:hover, #contact-mobilenav:hover {
@@ -97,47 +94,76 @@
 
 .sidenav {
   background-color: $sidenav-background-color;
-}
 
-.sidenav a {
+  a {
     font-size: 1.3em;
-    color: white;
+    color: $navbar-color;
     font-weight: bold;
-}
-
-.sidenav li:hover {
-    background-color: darkgrey;
-    color: black;
-}
-
-@media (max-width: 700px)  {
-
-  .container {
-    font-size: 100%;
   }
 
-  .name_navbar {
+  li {
+    :hover {
+      background-color: $navbar-hover-highlight;
+    }
+  }
+}
+
+
+@media screen and (max-width: 1050px)  {
+  .fixed-navbar {
+    height: 6.5em;
+    line-height: 3.25em;
+  }
+
+  .name-navbar {
+    width: 25%;
+    padding-right: 1em;
+  }
+}
+
+@media screen and (max-width: 875px)  {
+
+  .name-navbar {
     left: 1.25em;
     height: inherit;
     line-height: inherit;
+    width: inherit;
+    padding-right: 0;
   }
 
-  .ul_navbar {
+  .ul-navbar {
     display: none;
   }
 
-  .mobile_navbar_icon {
+  .mobile-navbar-icon {
     display: block;
     position: absolute;
-    right: 3.125em;
+    right: 5em;
+    color: $navbar-color;
+    font-size: 3em;
+
+    &:hover {
+      cursor: pointer;
+      color: $navbar-hover-highlight;
+    }
+  }
+}
+
+@media screen and (max-width: 600px)  {
+  .mobile-navbar-icon {
+    right: 3em;
+  }
+}
+
+@media screen and (max-width: 525px)  {
+
+  .fixed-navbar {
+    height: 12em;
+    line-height: 4em;
   }
 
-  #fixed_navbar .mobile_navbar_icon {
-    color: #fff;
-  }
-
-  #fixed_navbar .mobile_navbar_icon:hover {
-    cursor: pointer;
-    color: $navbar-hover-highlight;
+  .name-navbar {
+    width: 50%;
+    padding-right: 1em;
   }
 }

@@ -17,13 +17,13 @@ html, body {
 }
 
 p {
-  font-family: "Helvetica", sans-serif;
+  font-family: 'Helvetica', sans-serif;
   font-size: 1em;
   margin-top: 0;
 }
 
 h3 {
-  font-family: "Arial";
+  font-family: 'Arial';
   font-size: 2.8em;
   margin: 40px 0 60px 15px;
   color: darkslateblue;
@@ -32,10 +32,10 @@ h3 {
 a {
   text-decoration: none;
   color: rgb(0, 6, 255);
-}
 
-a:hover {
-  color: crimson;
+  &:hover {
+    color: crimson;
+  }
 }
 
 .fltlft {
