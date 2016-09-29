@@ -2,35 +2,111 @@
 
 .home {
   position: relative;
+  top: 50px;
   margin-top: 0;
   margin-bottom: 20px;
-  width: 100%;
+  background: black;
+  text-align: center;
 
   .home-background {
-   /* opacity: .5; */
+    opacity: .8;
     z-index: -1;
-    max-width: 100%;
-  /*  height: 675px; */
+    width: 100%;
+    height: 120vh;
+
+    @media screen and (max-width: 800px) {
+      height: 100vh;
+    }
+
+    @media screen and (max-width: 640px) {
+      height: 90vh;
+    }
   }
 
   .pic-text {
     position: absolute;
-    top: 20px;
+    top: 0;
     left: 0;
     z-index: 1;
-    width: inherit;
-    height: 80vh;
+    width: 100%;
     font-family: Arial;
+    font-size: $home-font-size;
     color: $home-color;
     font-weight: bold;
     text-transform: uppercase;
 
     h1 {
       position: absolute;
-      top: 3em;
-      font-size: 4em;
+      top: 150px;
       margin: 0;
       padding: 0;
     }
+
+    @media screen and (max-width: 1280px) {
+      font-size: $home-font-size * .75;
+    }
+
+    @media screen and (max-width: 800px) {
+      font-size: $home-font-size * .55;
+    }
+
+    @media screen and (max-width: 640px) {
+      font-size: $home-font-size * .45;
+    }
+
+    @media screen and (max-width: 400px) {
+      font-size: $home-font-size * .35;
+    }
+  }
+
+  .home-buttons {
+    display: flex;
+    position: absolute;
+    top: 250px;
+    z-index: 1;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial;
+    font-size: 1.2em;
+    color: $home-color;
+    text-transform: uppercase;
+
+    a {
+      color: inherit;
+    }
+
+    .button1 {
+      display: flex;
+      width: 20%;
+      margin-right: 15px;
+      height: inherit;
+      background-color: $home-button-one-color;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background-color: $home-button-one-hover-highlight;
+      }
+    }
+
+    .button2 {
+      display: flex;
+      width: 20%;
+      height: inherit;
+      background-color: $home-button-two-color;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background-color: $home-button-two-hover-highlight;
+      }
+    }
   }
 }
+
+
+
+
+

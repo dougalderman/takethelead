@@ -19,17 +19,17 @@
   line-height: inherit;
 }
 
-#name-fixednav, #about-ttl-fixednav, #bio-fixednav, #services-fixednav, #contact-fixednav {
+#name-fixednav, #about-fixednav, #bio-fixednav, #services-fixednav, #contact-fixednav {
   color: $navbar-color;
   font-family: Arial;
   text-decoration: none;
 }
 
-#name-fixednav:hover, #about-ttl-fixednav:hover, #bio-fixednav:hover, #services-fixednav:hover, #contact-fixednav:hover {
+#name-fixednav:hover, #about-fixednav:hover, #bio-fixednav:hover, #services-fixednav:hover, #contact-fixednav:hover {
   color: $navbar-hover-highlight;
 }
 
-#name-fixednav.highlight, #about-ttl-fixednav.highlight, #bio-fixednav.highlight, #services-fixednav.highlight, #contact-fixednav.highlight {
+#name-fixednav.highlight, #about-fixednav.highlight, #bio-fixednav.highlight, #services-fixednav.highlight, #contact-fixednav.highlight {
   color: $navbar-hover-highlight;
   text-decoration: underline;
 }
@@ -79,15 +79,15 @@
   }
 }
 
-#about-ttl-mobilenav, #bio-mobilenav, #services-mobilenav, #contact-mobilenav {
+#about-mobilenav, #bio-mobilenav, #services-mobilenav, #contact-mobilenav {
   color: $navbar-color;
 }
 
-#about-ttl-mobilenav:hover, #bio-mobilenav:hover, #services-mobilenav:hover, #contact-mobilenav:hover {
+#about-mobilenav:hover, #bio-mobilenav:hover, #services-mobilenav:hover, #contact-mobilenav:hover {
   color: $navbar-hover-highlight;
 }
 
-#about-ttl-mobilenav.highlight, #bio-mobilenav.highlight, #services-mobilenav.highlight, #contact-mobilenav.highlight {
+#about-mobilenav.highlight, #bio-mobilenav.highlight, #services-mobilenav.highlight, #contact-mobilenav.highlight {
   color: $navbar-hover-highlight;
   text-decoration: underline;
 }

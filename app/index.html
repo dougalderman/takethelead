@@ -31,7 +31,7 @@
       </div>
       <div class="ul-navbar">
         <ul>
-          <li><a id="about-ttl-fixednav" href="#about-ttl" ng-class="{highlight: waypoints.inAbout.down}">About Take The Lead</a></li>
+          <li><a id="about-fixednav" href="#about" ng-class="{highlight: waypoints.inAbout.down}">About Take The Lead</a></li>
           <li><a id="bio-fixednav" href="#bio" ng-class="{highlight: waypoints.inBio.down}">About The Trainer</a></li>
           <li><a id="services-fixednav" href="#services" ng-class="{highlight: waypoints.inServices.down}">Services and Pricing</a></li>
           <li><a id="contact-fixednav" href="#contact" ng-class="{highlight: waypoints.inContact.down}">Contact</a></li>
@@ -44,7 +44,7 @@
 
     <div class="mobile-navbar" ng-show="Main.mobileNavbarSelected" ng-click="Main.deactivateMobileNavbar()">
       <ul>
-        <li><a id="about-ttl-mobilenav" href="#about-ttl" ng-class="{highlight: waypoints.inAbout.down}">About Take The Lead</a></li>
+        <li><a id="about-mobilenav" href="#about" ng-class="{highlight: waypoints.inAbout.down}">About Take The Lead</a></li>
         <li><a id="bio-mobilenav" href="#bio" ng-class="{highlight: waypoints.inBio.down}">About The Trainer</a></li>
         <li><a id="services-mobilenav" href="#services" ng-class="{highlight: waypoints.inServices.down}">Services and Pricing</a></li>
         <li><a id="contact-mobilenav" href="#contact" ng-class="{highlight: waypoints.inContact.down}">Contact</a></li>
@@ -55,15 +55,32 @@
 
       <!--Picturefill image display-->
       <picture>
+        <source srcset="images/Dusty&Red_400.jpg" media="(max-width: 400px)">
         <source srcset="images/Dusty&Red_640.jpg" media="(max-width: 640px)">
         <source srcset="images/Dusty&Red_800.jpg" media="(max-width: 800px)">
         <source srcset="images/Dusty&Red_1280.jpg" media="(max-width: 1280px)">
-        <img class="home-background" srcset=" images/Dusty&Red_1920.jpg" alt="Dusty & Red">
+        <img class="home-background" srcset="images/Dusty&Red_1920.jpg" alt="Dusty & Red">
       </picture>
+
+      <!--<img class="home-background"
+      sizes="100vw"
+      srcset="images/Dusty&Red_cropped_400.jpg 400w,
+              images/Dusty&Red_cropped_640.jpg 640w,
+              images/Dusty&Red_cropped_800.jpg 800w,
+              images/Dusty&Red_cropped_1280.jpg 1280w,
+              images/Dusty&Red_cropped_1920.jpg 1920w"
+      alt="Dusty & Red">-->
 
       <div class="pic-text">
         <h1>calm owner, calm dog, calm home.</h1>
       </div>
+
+      <div class="home-buttons">
+        <a class="button1" href="#about">Learn How</a>
+        <a class="button2" href="#bio">Meet the Trainer</a>
+      </div>
+
+
     </div>
 
 		<div class="main_content">
@@ -73,37 +90,34 @@
 				up="fixedNav.up"
 				offset="20%">
 			</div>
-			<div id="projects" class="showcase" zum-waypoint="waypoints" down="inProjects.down" up="inProjects.up" offset="10%">
-				<h3>Projects</h3>
+			<div id="about" class="showcase" zum-waypoint="waypoints" down="inAbout.down" up="inAbout.up" offset="10%">
+				<h3>About Take The Lead</h3>
                <h1>“Take The Lead” offers an individualized guided approach to common dog walking problems.  Our methods are fluid and flexible adapting to the owner's and dog's individuality.</h1>
                <h2 class="line-two">With a calm owner and dog, clear communication, structure, and consistency, you can create the relationship that you want so that your dog will naturally follow you as his pack leader.</h2>
 			</div>
-			<div zum-waypoint="waypoints" down="inProjects.up" up="inProjects.down" offset="10%"></div>
-			<div id="about" class="showcase" zum-waypoint="waypoints" down="inAbout.down" up="inAbout.up" offset="10%">
-				<h3>About Doug</h3>
-				<img class="doug-photo" ng-src="images/doug_photo.jpg">
-				<p>Doug Alderman is an Angular web developer contractor, currently working with a Salt Lake City client. Doug graduated from <a href="https://devmounta.in/web-immersive" target="_blank">DevMountain</a> web programmer immersive bootcamp program in March 2016. He acquired full stack developer skills focusing on the Javascript-based <a href="http://mean.io/#!/" target="_blank">MEAN</a> stack (Mongo Database, Express Server, Angular Front End, and Node environment).</p><br>
-				<p>Doug grew up in the New York City area, and attended college at University of Virginia and University of Utah. Doug was an experienced developer working with IBM 4690 point-of-sale (POS) registers. He worked for companies such as American Stores / Albertsons, Thrify Drug Stores, and Linens 'N Things. Doug was promoted to a senior system analyst position at Albertsons. He has lived in Utah for over 15 years.</p>
-				<p class="fltlft">See Doug's resume:</p>
-				<a href="pdfs/Doug_Alderman_Resume_Website.pdf"><img ng-src="images/pdf-icon.jpg" height="50"></a>
-
-			</div>
 			<div zum-waypoint="waypoints" down="inAbout.up" up="inAbout.down" offset="10%"></div>
+			<div id="bio" class="showcase" zum-waypoint="waypoints" down="inBio.down" up="inBio.up" offset="10%">
+				<h3>About The Trainer</h3>
+			</div>
+            <div id="services" class="showcase" zum-waypoint="waypoints" down="inServices.down" up="inServices.up" offset="10%">
+				<h3>Services and Pricing</h3>
+			</div>
+			<div zum-waypoint="waypoints" down="inBio.up" up="inBio.down" offset="10%"></div>
 			<div id="contact" class="showcase" zum-waypoint="waypoints" down="inContact.down" up="inContact.up" offset="10%">
-				<h3>Contact Doug</h3>
-				<div class="icons">
+				<h3>Contact Take The Lead</h3>
+				<!--<div class="icons">
 					<a href="https://www.linkedin.com/in/dougsalderman" target="_blank"><img ng-src="images/linkedin-icon.jpg" height="50"></a>
 					<a href="https://github.com/dougalderman" target="_blank"><img ng-src="images/octocat.jpg" height="50"></a>
 				</div>
-				<div class="contact-form-container">
+				<div class="contact-form-container">-->
 
-					<!--Picturefill image display-->
+					<!--Picturefill image display
 					<picture>
 						<source srcset="images/Secret_Lake.jpg" media="(max-width: 562px)">
 						<img class="contact_background" srcset="images/Desolation_Lake.jpg" alt="Utah Mountains">
-					</picture>
+					</picture>-->
 
-					<div class="contact-form">
+					<!--<div class="contact-form">
 						<form ng-submit="contactForm()">
 							<div class="name">
 								<input id="name" type="text" ng-model="contact.name" placeholder="Name" required>
@@ -132,7 +146,7 @@
 								{{userMsg}}
 							</div>
 						</form>
-					</div>
+					</div>-->
 				</div>
 			</div>
 		</div>
