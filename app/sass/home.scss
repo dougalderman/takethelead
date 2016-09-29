@@ -1,0 +1,36 @@
+@import 'variables';
+
+.home {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 20px;
+  width: 100%;
+
+  .home-background {
+   /* opacity: .5; */
+    z-index: -1;
+    max-width: 100%;
+  /*  height: 675px; */
+  }
+
+  .pic-text {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    z-index: 1;
+    width: inherit;
+    height: 80vh;
+    font-family: Arial;
+    color: $home-color;
+    font-weight: bold;
+    text-transform: uppercase;
+
+    h1 {
+      position: absolute;
+      top: 3em;
+      font-size: 4em;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}
