@@ -2,7 +2,7 @@
 
 #about {
   height: $about-height;
-  padding-top: 50px;
+  padding-top: 100px;
   color: $about-color;
   background: $about-background;
   font-family: 'Helvetica', sans-serif;
@@ -10,8 +10,9 @@
   text-align: center;
 
   h1 {
-    color: darkblue;
+    color: $about-h1-color;
     font-size: $about-font-size;
+    text-transform: uppercase;
   }
 
   img {
@@ -37,23 +38,26 @@
 
   @media screen and (max-width: 1280px) {
     font-size: $about-font-size * .9;
+    height: $about-height * 1.1;
   }
 
   @media screen and (max-width: 800px) {
     font-size: $about-font-size * .8;
+    height: $about-height * 1.2;
   }
 
   @media screen and (max-width: 640px) {
     font-size: $about-font-size * .7;
-    height: $about-height * 1.1;
+    height: $about-height * 1.3;
+    padding-top: 150px;
   }
 
   @media screen and (max-width: 400px) {
     font-size: $about-font-size * .6;
-    height: $about-height * 1.2;
+    height: $about-height * 1.4;
   }
 
   @media screen and (max-width: 300px) {
-    height: $about-height * 1.3;
+    height: $about-height * 1.5;
   }
 }

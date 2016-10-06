@@ -14,10 +14,12 @@
 
     <!-- inject:css -->
     <link rel="stylesheet" href="/css/about.css">
+    <link rel="stylesheet" href="/css/bio.css">
     <link rel="stylesheet" href="/css/contact.css">
     <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="/css/home.css">
     <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/services.css">
     <!-- endinject -->
 
 </head>
@@ -77,31 +79,61 @@
       </div>
 
 		<div class="main-content">
-			<!-- Page Content goes here -->
-			<div zum-waypoint="waypoints"
-				down="fixedNav.down"
-				up="fixedNav.up"
-				offset="20%">
-			</div>
-			<div id="about" class="showcase" zum-waypoint="waypoints" down="inAbout.down" up="inAbout.up" offset="10%">
-              <h1>About Take The Lead</h1>
-              <img ng-src="images/Dog_Walking_Back.jpg" alt="Dog Walking from Back">
-              <div class="about-text">
-                <h2>“Take The Lead” offers an individualized guided approach to common dog walking problems.  Our methods are fluid and flexible adapting to the owner's and dog's individuality.</h2>
-                <h2>With a calm owner and dog, clear communication, structure, and consistency, you can create the relationship that you want so that your dog will naturally follow you as his pack leader.</h2>
-                <h3>We at “Take The Lead” believe that there is not a one size fits all in dog training.  We will assess the needs of your dog and work with you on a plan that will enhance your inner pack leader.</h3>
-                <h3>Our goal is to help you find the tools that work best for you and your dog and guide you towards a relationship where the dog will look to you for leadership in everyday life.</h3>
+          <!-- Page Content goes here -->
+          <div zum-waypoint="waypoints" down="fixedNav.down" up="fixedNav.up" offset="20%">
+          </div>
+          <div id="about" class="showcase" zum-waypoint="waypoints" down="inAbout.down" up="inAbout.up" offset="10%">
+            <h1>About "Take The Lead"</h1>
+            <img ng-src="images/Dog_Walking_Back.jpg" alt="Dog Walking from Back">
+            <div class="about-text">
+              <h2>“Take The Lead” offers an individualized guided approach to common dog walking problems.  Our methods are fluid and flexible adapting to the owner's and dog's individuality.</h2>
+              <h2>With a calm owner and dog, clear communication, structure, and consistency, you can create the relationship that you want so that your dog will naturally follow you as his pack leader.</h2>
+              <h3>We at “Take The Lead” believe that there is not a one size fits all in dog training.  We will assess the needs of your dog and work with you on a plan that will enhance your inner pack leader.</h3>
+              <h3>Our goal is to help you find the tools that work best for you and your dog and guide you towards a relationship where the dog will look to you for leadership in everyday life.</h3>
+            </div>
+          </div>
+          <div zum-waypoint="waypoints" down="inAbout.up" up="inAbout.down" offset="10%"></div>
+		  <div id="bio" class="showcase" zum-waypoint="waypoints" down="inBio.down" up="inBio.up" offset="10%">
+            <h1>About The Trainer</h1>
+            <img ng-src="images/Dog_Walking_Back.jpg" alt="Dog Walking from Back">
+            <div class="bio-text">
+              <p>This is Tina's biography.</p>
+            </div>
+          </div>
+          <div zum-waypoint="waypoints" down="inBio.up" up="inBio.down" offset="10%"></div>
+          <div id="services" class="showcase" zum-waypoint="waypoints" down="inServices.down" up="inServices.up" offset="10%">
+            <h1>Services and Pricing</h1>
+            <div class="packages">
+              <div>
+                <h2>Take the lead in your home</h2>
+                <img ng-src="images/Dog_at_Home.jpg" alt="Dog at Home">
+                <p>Through our “Take the Lead in your home” program, our goal is to guide you towards the relationship you are looking to have with your dog.  We work with you in your home on the specific behavior problems you would like to address while providing structure, tools, encouragement and support.</p>
+                <h3>$75 Initial Consultation</h3>
+                <h3>$60 follow up visits *</h3>
+                <h4>* There are no required packages.  We will discuss different options during the initial consultation to meet the needs for you and your dog. </h4>
+                <div class="button">
+                  <a href="#contact">Book Now</a>
+                </div>
               </div>
-			</div>
-			<div zum-waypoint="waypoints" down="inAbout.up" up="inAbout.down" offset="10%"></div>
-			<div id="bio" class="showcase" zum-waypoint="waypoints" down="inBio.down" up="inBio.up" offset="10%">
-				<h3>About The Trainer</h3>
-			</div>
-            <div id="services" class="showcase" zum-waypoint="waypoints" down="inServices.down" up="inServices.up" offset="10%">
-				<h3>Services and Pricing</h3>
-			</div>
-			<div zum-waypoint="waypoints" down="inBio.up" up="inBio.down" offset="10%"></div>
-			<div id="contact" class="showcase" zum-waypoint="waypoints" down="inContact.down" up="inContact.up" offset="10%">
+              <div>
+                <h2>Take the lead on your walk</h2>
+                <img ng-src="images/Dog_on_Walk.jpg" alt="Dog on Walk">
+                <ul>
+                  <li>Do you avoid taking your dog out at certain times of the day?</li>
+                  <li>Is your dog pulling or lunging on the leash?</li>
+                  <li>Is your dog fearful or avoidant of certain situations?</li>
+                </ul>
+                <p>We will work with your dog one on one initially in your neighborhood to assess the situation and address the behaviors, then include you on the walks and empower you to embrace your inner pack leader.</p>
+                <h3>$30 for 30 minutes</h3>
+                <h3>$50 for 60 minutes</h3>
+                <div class="button">
+                  <a href="#contact">Book Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+		  <div zum-waypoint="waypoints" down="inServices.up" up="inServices.down" offset="10%"></div>
+		  <div id="contact" class="showcase" zum-waypoint="waypoints" down="inContact.down" up="inContact.up" offset="10%">
 				<h3>Contact Take The Lead</h3>
 				<!--<div class="icons">
 					<a href="https://www.linkedin.com/in/dougsalderman" target="_blank"><img ng-src="images/linkedin-icon.jpg" height="50"></a>
