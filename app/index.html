@@ -134,54 +134,49 @@
           </div>
 		  <div zum-waypoint="waypoints" down="inServices.up" up="inServices.down" offset="10%"></div>
 		  <div id="contact" class="showcase" zum-waypoint="waypoints" down="inContact.down" up="inContact.up" offset="10%">
-				<h3>Contact Take The Lead</h3>
-				<!--<div class="icons">
-					<a href="https://www.linkedin.com/in/dougsalderman" target="_blank"><img ng-src="images/linkedin-icon.jpg" height="50"></a>
-					<a href="https://github.com/dougalderman" target="_blank"><img ng-src="images/octocat.jpg" height="50"></a>
-				</div>
-				<div class="contact-form-container">-->
-
-					<!--Picturefill image display
-					<picture>
-						<source srcset="images/Secret_Lake.jpg" media="(max-width: 562px)">
-						<img class="contact_background" srcset="images/Desolation_Lake.jpg" alt="Utah Mountains">
-					</picture>-->
-
-					<!--<div class="contact-form">
-						<form ng-submit="contactForm()">
-							<div class="name">
-								<input id="name" type="text" ng-model="contact.name" placeholder="Name" required>
-							</div>
-							<div class="phone">
-								 <input id="phone" type="tel" ng-model="contact.phone" placeholder="Phone">
-							</div>
-							<div class="email">
-								 <input id="email" type="email" ng-model="contact.email" placeholder="Email" required>
-							</div>
-							<div class="email-again">
-								 <input id="email-again" type="email" ng-model="contact.emailAgain" placeholder="Re-enter Email" required>
-							</div>
-							<div class="match-error" ng-show="emailMatchError">
-                    			Emails don't match
-                			</div>
-							<div class="message">
-								 <textarea id="message" ng-model="contact.message" placeholder="Message" required></textarea>
-							</div>
-							<div class="submit" ng-hide="inRecaptcha">
-								<input class="button" type="submit" value="Submit">
-							</div>
-							<div id="recaptcha-widget" ng-show="inRecaptcha">
-							</div>
-							<div class="user-msg" ng-class="{green: formSuccess, red: !formSuccess}" ng-show="userMsg">
-								{{userMsg}}
-							</div>
-						</form>
-					</div>-->
-				</div>
-			</div>
+            <h1>Contact Take The Lead</h1>
+            <h2>Call Take The Lead today at (954) 649-6421</h2>
+            <h2>Or email us at <a href="mailto:tina.alderman@gmail.com">tina.alderman@gmail.com</a></h2>
+            <h2>Or fill out the contact form below</h2>
+            <div class="contact-form-container">
+              <div class="contact-form">
+                <form ng-submit="contactForm()">
+                  <div class="name">
+                    <input id="name" type="text" ng-model="Main.contact.name" placeholder="Name" required>
+                  </div>
+                  <div class="phone">
+                    <input id="phone" type="tel" ng-model="Main.contact.phone" placeholder="Phone">
+                  </div>
+                  <div class="email">
+                    <input id="email" type="email" ng-model="Main.contact.email" placeholder="Email" required>
+                  </div>
+                  <div class="email-again">
+                    <input id="email-again" type="email" ng-model="Main.contact.emailAgain" placeholder="Re-enter Email" required>
+                  </div>
+                  <div class="match-error" ng-show="Main.emailMatchError">
+                    Emails don't match
+                  </div>
+                  <div class="subject">
+                    <input id="subject" type="text" ng-model="Main.contact.subject" placeholder="Subject" required></textarea>
+                  </div>
+                  <div class="message">
+                    <textarea id="message" ng-model="Main.contact.message" placeholder="Message" required></textarea>
+                  </div>
+                  <div class="submit" ng-hide="Main.inRecaptcha">
+                    <input class="button" type="submit" value="Submit">
+                  </div>
+                  <!--<div id="recaptcha-widget" ng-show="Main.inRecaptcha">
+                  </div>-->
+                  <div class="user-msg" ng-class="{green: Main.formSuccess, red: !Main.formSuccess}" ng-show="Main.userMsg">
+                    {{Main.userMsg}}
+                  </div>
+                </form>
+              </div>
+		    </div>
+		  </div>
 		</div>
+      </div>
 	</div>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>

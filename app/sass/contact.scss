@@ -1,125 +1,122 @@
-#contact .icons {
-    height: 70px;
-    margin: 20px 30px;
-}
+@import 'variables';
 
-#contact .icons a {
-    margin-right: 30px;
-}
+#contact {
+  height: $contact-height;
+  padding-top: 100px;
+  font-family: 'Helvetica', sans-serif;
+  font-size: $contact-font-size;
+  text-align: center;
 
-#contact .contact-form-container {
-	position: relative;
-	height: 750px;
-}
+  h1 {
+    color: $contact-h1-color;
+    font-size: $contact-font-size;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
 
-#contact img.contact_background {
-	position: absolute;
-	bottom: 0;
-	opacity: 0.8;
-    z-index: -1;
-	width: 100%;
-	height: 750px;
-}
+  h2 {
+    color: $contact-h2-color;
+    font-size: $contact-font-size - 1;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+  }
 
-#contact .contact-form {
+  .contact-form-container {
+    position: relative;
+    height: $contact-height - 50;
+  }
+
+  .contact-form {
 	position: absolute;
 	height: 700px;
-	/* width: 1100px; */
 	width: 700px;
 	top: 50px;
 	left: 50%;
 	background: none;
-/*	margin-left: -550px; */
 	margin-left: -350px;
-}
 
-#contact .contact-form div {
-	position: absolute;
-	padding-left: 5px;
-	background: #fff;
-}
+    div {
+      position: absolute;
+      padding-left: 5px;
+      background: $contact-form-input-background;
 
-#contact div.name {
-	top: 0;
-/*	left: 33%; */
-	left: 0;
-	height: 50px;
-	width: 300px;
-/*	margin-left: -150px; */
-}
+      &.name {
+        top: 0;
+        left: 0;
+        height: 50px;
+        width: 300px;
+      }
 
-#contact div.phone {
-	top: 0;
-/* 	left: 67%; */
-	right: 0;
-	height: 50px;
-	width: 300px;
-/*	margin-left: -150px; */
-}
+      &.phone {
+        top: 0;
+        right: 0;
+        height: 50px;
+        width: 300px;
+      }
 
-#contact div.email {
-	top: 120px;
-/*	left: 33%; */
-	left: 0;
-	height: 50px;
-	width: 300px;
-/*	margin-left: -150px; */
-}
+      &.email {
+        top: 120px;
+        left: 0;
+        height: 50px;
+        width: 300px;
+      }
 
-#contact div.email-again {
-	top: 120px;
-/*	left: 67%; */
-	right: 0;
-	height: 50px;
-	width: 300px;
-/* 	margin-left: -150px; */
-}
+      &.email-again {
+        top: 120px;
+        right: 0;
+        height: 50px;
+        width: 300px;
+      }
 
-#contact div.message {
-/* 	padding-top: 5px; */
-	top: 240px;
-/* 	left: 50%; */
-	left: 0;
-	height: 300px;
-/*	width: 674px; /* make it equal to width of 2 combined div's above + space in between
-	margin-left: -337px; */
-	width: 700px;
-}
+      &.subject {
+        top: 240px;
+        left: 0;
+        height: 50px;
+        width: 700px;
+      }
 
-#contact div.submit {
-	position: absolute;
-	top: 600px;
-	left: 50%;
-    height: 50px;
-    width: 120px;
-	margin-left: -60px;
-	padding: 0;
-}
+      &.message {
+        top: 360px;
+        left: 0;
+        height: 300px;
+        width: 700px;
+      }
 
-#contact #recaptcha-widget {
-	position: absolute;
-	top: 600px;
-}
+      &.submit {
+        position: absolute;
+        top: 720px;
+        left: 50%;
+        height: 50px;
+        width: 120px;
+        margin-left: -60px;
+        padding: 0;
+      }
+    }
+  }
 
-#contact #recaptcha-widget div {
-	padding-left: 0;
-}
+  #recaptcha-widget {
+    position: absolute;
+    top: 720px;
 
-#contact #recaptcha-widget div div {
-	background: none;
-}
+    div {
+      padding-left: 0;
 
-#contact .button {
+      div {
+        background: none;
+      }
+    }
+  }
+
+  .button {
     font-family: Arial;
     font-size: 1.2em;
     color: white;
     background-color: rgb(81, 50, 203);
 	width: inherit;
-}
+  }
 
-#contact .match-error {
+  .match-error {
 	position: absolute;
-/*	top: 120px; */
 	top: 180px;
 	left: 0;
 	padding: 5px;
@@ -127,138 +124,147 @@
 	font-family: Arial;
     font-weight: bold;
     font-size: 1em;
-}
+  }
 
-#contact .user-msg {
+  .user-msg {
 	position: absolute;
-/*	top: 600px; */
-	top: 560px;
+	top: 720px;
 	font-family: Arial;
 	font-size: 1em;
 	font-weight: bold;
 	left: 0;
 	padding: 5px;
-}
+  }
 
-#contact .green {
-	color: green;
-}
+  .green {
+    color: green;
+  }
 
-#contact .red {
-	color: red;
-}
-#contact input {
+  .red {
+    color: red;
+  }
+
+  input {
 	height: inherit;
-/*	width: inherit; */
 	background: inherit;
 	border: none;
-	color: #000;
+	color: $contact-form-input-color;
 	font-family: Arial;
     font-size: 1em;
-}
 
-#contact input:required {
-	box-shadow: none;
-}
+    &:focus {
+      outline: none;
+    }
 
-#contact textarea {
+    &:required {
+	 box-shadow: none;
+    }
+  }
+
+  textarea {
 	padding-top: 5px;
 	height: inherit;
-/*	width: inherit; */
 	background: inherit;
 	border: none;
-	color: #000;
+	color: $contact-form-input-color;
 	font-family: Arial;
     font-size: 1em;
-}
 
-#contact textarea:focus, input:focus{
-    outline: none;
-}
+    &:focus {
+      outline: none;
+    }
 
-#contact textarea:required {
-	box-shadow: none;
-}
+    &:required {
+      box-shadow: none;
+    }
+  }
 
-::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
 	font-family: Arial;
   	font-size: 1em;
- 	color: darkgreen;
-}
+ 	color: $contact-form-input-color;
+  }
 
-::-moz-placeholder { /* Firefox 19+ */
-  font-family: Arial;
-  font-size: 1em;
-  color: green;
-}
+  ::-moz-placeholder { /* Firefox 19+ */
+    font-family: Arial;
+    font-size: 1em;
+    color: $contact-form-input-color;
+  }
 
-:-ms-input-placeholder { /* IE 10+ */
+  :-ms-input-placeholder { /* IE 10+ */
 	font-family: Arial;
   	font-size: 1em;
-	color: green;
-}
+	color: $contact-form-input-color;
+  }
 
-:-moz-placeholder { /* Firefox 18- */
+  :-moz-placeholder { /* Firefox 18- */
 	font-family: Arial;
   	font-size: 1em;
-	color: green;
-}
+	color: $contact-form-input-color;
+  }
 
-@media (max-width: 850px)  {
+  @media screen and (max-width: 850px)  {
 
-	#contact .contact-form {
-		height: 700px;
-		width: 300px;
-		margin-left: -150px;
+	.contact-form {
+      height: 700px;
+      width: 300px;
+      margin-left: -150px;
 	}
 
+	div {
+      &.name {
+        height: 30px;
+        width: 300px;
+      }
 
-	#contact div.name {
-		height: 30px;
-		width: 300px;
-	}
+      &.phone {
+        top: 80px;
+        left: 0;
+        height: 30px;
+        width: 300px;
+      }
 
-	#contact div.phone {
-		top: 80px;
-		left: 0;
-		height: 30px;
-		width: 300px;
-	}
+      &.email {
+        top: 160px;
+        height: 30px;
+        width: 300px;
+      }
 
-	#contact div.email {
-		top: 160px;
-		height: 30px;
-		width: 300px;
-	}
+      &.email-again {
+        top: 240px;
+        height: 30px;
+        width: 300px;
+      }
 
-	#contact div.email-again {
-		top: 240px;
-		height: 30px;
-		width: 300px;
-	}
+      &.subject {
+        top: 320px;
+        height: 30px;
+        width: 300px;
+      }
 
-	#contact div.message {
-		top: 320px;
-		left: 0;
-		height: 230px;
-		width: 300px;
-	}
+      &.message {
+        top: 400px;
+        left: 0;
+        height: 230px;
+        width: 300px;
+      }
 
-	#contact div.submit {
-		top: 620px;
-	}
+      &.submit {
+        top: 700px;
+      }
+    }
 
-	#contact #recaptcha-widget {
-		top: 620px;
-	}
+    #recaptcha-widget {
+      top: 700px;
+    }
 
-	#contact .match-error {
-		top: 280px;
-	}
+    .match-error {
+      top: 280px;
+    }
 
-	#contact .user-msg {
-		top: 560px;
-		height: 50px;
-	}
-
+    .user-msg {
+      top: 640px;
+      height: 50px;
+    }
+  }
 }
