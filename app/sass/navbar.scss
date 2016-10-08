@@ -19,19 +19,23 @@
   line-height: inherit;
 }
 
-#name-fixednav, #about-fixednav, #bio-fixednav, #services-fixednav, #contact-fixednav {
+%nav-bar {
   color: $navbar-color;
   font-family: Arial;
   text-decoration: none;
+
+  &:hover {
+    color: $navbar-hover-highlight;
+  }
+
+  &.highlight {
+    color: $navbar-hover-highlight;
+    text-decoration: underline;
+  }
 }
 
-#name-fixednav:hover, #about-fixednav:hover, #bio-fixednav:hover, #services-fixednav:hover, #contact-fixednav:hover {
-  color: $navbar-hover-highlight;
-}
-
-#name-fixednav.highlight, #about-fixednav.highlight, #bio-fixednav.highlight, #services-fixednav.highlight, #contact-fixednav.highlight {
-  color: $navbar-hover-highlight;
-  text-decoration: underline;
+#name-fixednav, #about-fixednav, #bio-fixednav, #services-fixednav, #contact-fixednav {
+  @extend %nav-bar;
 }
 
 .ul-navbar {
@@ -80,16 +84,7 @@
 }
 
 #about-mobilenav, #bio-mobilenav, #services-mobilenav, #contact-mobilenav {
-  color: $navbar-color;
-}
-
-#about-mobilenav:hover, #bio-mobilenav:hover, #services-mobilenav:hover, #contact-mobilenav:hover {
-  color: $navbar-hover-highlight;
-}
-
-#about-mobilenav.highlight, #bio-mobilenav.highlight, #services-mobilenav.highlight, #contact-mobilenav.highlight {
-  color: $navbar-hover-highlight;
-  text-decoration: underline;
+    @extend %nav-bar;
 }
 
 .sidenav {

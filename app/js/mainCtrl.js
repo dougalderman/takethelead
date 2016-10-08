@@ -57,7 +57,7 @@
                     ctrl.userMsg = 'Problem sending the message.';
 				  }
 				}, function(er) {
-                  console.log('in writeContact error')
+                  console.log('in writeContact error');
                   console.error('er = ', er);
                   ctrl.inRecaptcha = false;  // no longer in recaptcha
                   resetCaptcha();
@@ -81,12 +81,12 @@
 		}, function(err) {
           ctrl.formSuccess = false;
           ctrl.inRecaptcha = false;  // no longer in recaptcha
-          console.log('in verifyRecaptcha error')
+          console.log('in verifyRecaptcha error');
           console.error('err = ', err);
           resetCaptcha();
           ctrl.userMsg = 'Problem verifying you\'re not a robot.';
         });
-	}
+	};
 
 	var onLoadCallback = function() {
       grecaptcha.render(ctrl.currentRecaptchaId,
@@ -130,7 +130,7 @@
 	};
 
     ctrl.contactForm = function() {
-      console.log('in contact form')
+      console.log('in contact form');
       console.log('ctrl.contact', ctrl.contact);
       if (ctrl.contact.email === ctrl.contact.emailAgain) {
         ctrl.userMsg = '';
@@ -145,7 +145,7 @@
         ctrl.formSuccess = false;
         ctrl.userMsg = 'There was a problem with this form';
       }
-    }
+    };
   }
 
   angular .module('takeTheLead')

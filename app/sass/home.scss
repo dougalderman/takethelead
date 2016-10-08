@@ -26,7 +26,7 @@
 
 .scrollable-content {
   position: relative;
-  top: 180px;
+  top: 140px;
   left: 0;
   width: inherit;
 
@@ -107,6 +107,10 @@
         background-color: $home-button-two-hover-highlight;
       }
     }
+  }
+
+  @media screen and (max-width: 640px) {
+    top: 180px;
   }
 }
 
