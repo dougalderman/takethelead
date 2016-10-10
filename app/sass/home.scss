@@ -7,6 +7,7 @@
   margin-bottom: 20px;
   background: black;
   text-align: center;
+  font-size: $home-font-size;
 
   .home-background {
     opacity: .8;
@@ -71,7 +72,7 @@
     align-items: center;
     justify-content: center;
     font-family: Arial;
-    font-size: 1.2em;
+    font-size: $home-font-size - 3.5;
     color: $home-color;
     text-transform: uppercase;
 
@@ -106,6 +107,18 @@
       &:hover {
         background-color: $home-button-two-hover-highlight;
       }
+    }
+
+    @media screen and (max-width: 1280px) {
+      font-size: $home-font-size - 3.7;
+    }
+
+    @media screen and (max-width: 800px) {
+      font-size: $home-font-size - 3.9;
+    }
+
+    @media screen and (max-width: 640px) {
+      font-size: $home-font-size - 4.1;
     }
   }
 

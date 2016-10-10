@@ -16,9 +16,14 @@
 
   h2 {
     color: $contact-h2-color;
-    font-size: $contact-font-size - 1;
+    font-size: $contact-font-size - 1.2;
     text-transform: uppercase;
     margin-bottom: 20px;
+
+    a {
+      overflow-wrap: break-word;
+      word-wrap: break-word;
+    }
   }
 
   .contact-form-container {
@@ -35,37 +40,40 @@
     background: none;
     margin-left: -350px;
 
+    form {
+      width: inherit;
+    }
+
     div {
       position: absolute;
-      padding-left: 5px;
       background: $contact-form-input-background;
 
       &.name {
         top: 0;
         left: 0;
         height: 50px;
-        width: 300px;
+        width: 320px;
       }
 
       &.phone {
         top: 0;
         right: 0;
         height: 50px;
-        width: 300px;
+        width: 320px;
       }
 
       &.email {
         top: 120px;
         left: 0;
         height: 50px;
-        width: 300px;
+        width: 320px;
       }
 
       &.email-again {
         top: 120px;
         right: 0;
         height: 50px;
-        width: 300px;
+        width: 320px;
       }
 
       &.subject {
@@ -146,11 +154,13 @@
 
   input {
     height: inherit;
+    width: inherit;
     background: inherit;
     border: 0;
+    padding-left: 5px;
     color: $contact-form-input-color;
     font-family: Arial;
-    font-size: 1em;
+    font-size: $contact-font-size - 1.5;
 
     &:focus {
       outline: none;
@@ -163,12 +173,14 @@
 
   textarea {
     padding-top: 5px;
+    padding-left: 5px;
     height: inherit;
+    width: inherit;
     background: inherit;
     border: 0;
     color: $contact-form-input-color;
     font-family: Arial;
-    font-size: 1em;
+    font-size: $contact-font-size - 1.5;
 
     &:focus {
       outline: none;
@@ -181,76 +193,77 @@
 
   ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
     font-family: Arial;
-    font-size: 1em;
-    color: $contact-form-input-color;
+    font-size: $contact-font-size - 1.3;
+    color: $contact-form-placeholder-color;
   }
 
   ::-moz-placeholder { /* Firefox 19+ */
     font-family: Arial;
-    font-size: 1em;
-    color: $contact-form-input-color;
+    font-size: $contact-font-size - 1.3;
+    color: $contact-form-placeholder-color;
   }
 
   :-ms-input-placeholder { /* IE 10+ */
     font-family: Arial;
-    font-size: 1em;
-    color: $contact-form-input-color;
+    font-size: $contact-font-size - 1.3;
+    color: $contact-form-placeholder-color;
   }
 
   :-moz-placeholder { /* Firefox 18- */
     font-family: Arial;
-    font-size: 1em;
-    color: $contact-form-input-color;
+    font-size: $contact-font-size - 1.3;
+    color: $contact-form-placeholder-color;
   }
 
   @media screen and (max-width: 850px)  {
 
     .contact-form {
       height: 700px;
-      width: 300px;
-      margin-left: -150px;
-	}
+      width: 320px;
+      margin-left: -160px;
 
-    div {
-      &.name {
-        height: 30px;
-        width: 300px;
-      }
+      div {
+        &.name {
+          height: 30px;
+          width: inherit;
+        }
 
-      &.phone {
-        top: 80px;
-        left: 0;
-        height: 30px;
-        width: 300px;
-      }
+        &.phone {
+          top: 80px;
+          left: 0;
+          height: 30px;
+          width: inherit;
+        }
 
-      &.email {
-        top: 160px;
-        height: 30px;
-        width: 300px;
-      }
+        &.email {
+          top: 160px;
+          height: 30px;
+          width: inherit;
+        }
 
-      &.email-again {
-        top: 240px;
-        height: 30px;
-        width: 300px;
-      }
+        &.email-again {
+          top: 240px;
+          height: 30px;
+          width: inherit;
+          left: 0;
+        }
 
-      &.subject {
-        top: 320px;
-        height: 30px;
-        width: 300px;
-      }
+        &.subject {
+          top: 320px;
+          height: 30px;
+          width: inherit;
+        }
 
-      &.message {
-        top: 400px;
-        left: 0;
-        height: 230px;
-        width: 300px;
-      }
+        &.message {
+          top: 400px;
+          left: 0;
+          height: 230px;
+          width: inherit;
+        }
 
-      &.submit {
-        top: 700px;
+        &.submit {
+          top: 700px;
+        }
       }
     }
 
@@ -266,5 +279,13 @@
       top: 640px;
       height: 50px;
     }
+  }
+
+   @media screen and (max-width: 340px)  {
+
+    .contact-form {
+      width: 240px;
+      margin-left: -120px;
+     }
   }
 }

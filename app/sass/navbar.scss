@@ -84,7 +84,7 @@
 }
 
 #about-mobilenav, #bio-mobilenav, #services-mobilenav, #contact-mobilenav {
-    @extend %nav-bar;
+  @extend %nav-bar;
 }
 
 .sidenav {
@@ -152,13 +152,36 @@
 
 @media screen and (max-width: 525px)  {
 
-  .fixed-navbar {
+  /* .fixed-navbar {
     height: 12em;
     line-height: 4em;
-  }
+  } */
 
   .name-navbar {
     width: 50%;
     padding-right: 1em;
+    font-size: 1.8em;
+  }
+}
+
+@media screen and (max-width: 400px)  {
+
+  /* .fixed-navbar {
+    height: 12em;
+    line-height: 4em;
+  } */
+
+  .name-navbar {
+    width: 50%;
+    padding-right: 1em;
+    font-size: 1.6em;
+  }
+}
+
+@media screen and (max-width: 350px)  {
+
+  .fixed-navbar {
+    height: 12em;
+    line-height: 4em;
   }
 }
