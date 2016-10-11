@@ -168,9 +168,11 @@
                   </div>
                   <!--<div id="recaptcha-widget" ng-show="Main.inRecaptcha">
                   </div>-->
-                  <div class="user-msg" ng-class="{green: Main.formSuccess, red: !Main.formSuccess}" ng-show="Main.userMsg">
-                    {{Main.userMsg}}
-                  </div>
+                  <div class="user-msg" ng-class="{green: formSuccess, red: !formSuccess}" ng-show="userMsg">
+					<div class="inner-msg">
+                      {{userMsg}}
+				    </div>
+				  </div>
                 </form>
               </div>
 		    </div>

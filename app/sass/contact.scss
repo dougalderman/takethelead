@@ -3,6 +3,7 @@
 #contact {
   height: $contact-height;
   padding-top: 100px;
+  margin-bottom: 50px;
   font-family: 'Helvetica', sans-serif;
   font-size: $contact-font-size;
   text-align: center;
@@ -98,6 +99,10 @@
         width: 120px;
         margin-left: -60px;
         padding: 0;
+
+        :hover {
+          cursor: pointer;
+        }
       }
     }
   }
@@ -105,12 +110,14 @@
   #recaptcha-widget {
     position: absolute;
     top: 720px;
+    background: initial;
 
     div {
       padding-left: 0;
+      background: initial;
 
       div {
-        background: none;
+        background: initial;
       }
     }
   }
@@ -136,12 +143,24 @@
 
   .user-msg {
     position: absolute;
-    top: 720px;
-    font-family: Arial;
-    font-size: 1em;
-    font-weight: bold;
-    left: 0;
-    padding: 5px;
+	top: 720px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: Arial;
+	font-size: 1em;
+	font-weight: bold;
+	left: 0;
+	right: 0;
+	padding: 5px;
+	background: initial;
+
+    .inner-msg {
+      background: #fff;
+      height: 30px;
+      line-height: 30px;
+      padding: 0 5px;
+    }
   }
 
   .green {
@@ -215,7 +234,14 @@
     color: $contact-form-placeholder-color;
   }
 
+  @media screen and (max-width: 1280px) {
+    font-size: $contact-font-size * .9;
+  }
+
   @media screen and (max-width: 850px)  {
+
+    font-size: $contact-font-size * .8;
+    height: $contact-height * 1.3;
 
     .contact-form {
       height: 700px;
@@ -281,7 +307,9 @@
     }
   }
 
-   @media screen and (max-width: 340px)  {
+  @media screen and (max-width: 340px)  {
+
+    font-size: $contact-font-size * .7;
 
     .contact-form {
       width: 240px;

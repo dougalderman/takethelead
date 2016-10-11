@@ -98,7 +98,7 @@
       );
 
       if (ctrl.currentRecaptchaId === 'recaptcha-widget') { // only do once for parent div
-        var leftMargin = $('#' + ctrl.currentRecaptchaId + ' div div').width() * -0.5;
+        var leftMargin = $('#' + ctrl.currentRecaptchaId + ' div').width() * -0.5;
 
         $('#' + ctrl.currentRecaptchaId).css({'left': '50%', 'margin-left': leftMargin + 'px'});  // Set left of absolutely positioned element to 50%. Set margin left to -0.5 of width. This will center the element.
       }

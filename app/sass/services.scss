@@ -49,7 +49,7 @@
     }
 
     h4 {
-      font-size: $services-font-size - 1.75;
+      font-size: $services-font-size - 1.7;
       color: $services-h3-color;
       text-align: left;
       margin-top: 20px;
@@ -120,13 +120,16 @@
   }
 
   @media screen and (max-width: 800px) {
-    font-size: $services-font-size * .9;
     height: $services-height * 1.3;
   }
 
   @media screen and (max-width: 640px) {
     height: $services-height * 1.8;
     padding-top: 150px;
+
+    h1 {
+      font-size: $services-font-size * .8;
+    }
 
     .packages {
       display: inherit;
