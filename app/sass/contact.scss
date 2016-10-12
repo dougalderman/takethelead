@@ -105,6 +105,55 @@
         }
       }
     }
+
+    .user-msg {
+      position: absolute;
+      top: 690px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: Arial;
+      font-size: 1em;
+      font-weight: bold;
+      left: 0;
+      right: 0;
+      padding: 5px;
+      background: initial;
+
+      .inner-msg {
+        background: #fff;
+        height: 30px;
+        line-height: 30px;
+        padding: 0 5px;
+      }
+    }
+
+    .button {
+      font-family: Arial;
+      font-size: 1.2em;
+      color: white;
+      background-color: rgb(81, 50, 203);
+      width: inherit;
+    }
+
+    .match-error {
+      position: absolute;
+      top: 180px;
+      left: 0;
+      padding: 5px;
+      color: red;
+      font-family: Arial;
+      font-weight: bold;
+      font-size: 1em;
+    }
+
+    .green {
+      color: green;
+    }
+
+    .red {
+      color: red;
+    }
   }
 
   #recaptcha-widget {
@@ -120,55 +169,6 @@
         background: initial;
       }
     }
-  }
-
-  .button {
-    font-family: Arial;
-    font-size: 1.2em;
-    color: white;
-    background-color: rgb(81, 50, 203);
-    width: inherit;
-  }
-
-  .match-error {
-    position: absolute;
-    top: 180px;
-    left: 0;
-    padding: 5px;
-    color: red;
-    font-family: Arial;
-    font-weight: bold;
-    font-size: 1em;
-  }
-
-  .user-msg {
-    position: absolute;
-	top: 720px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	font-family: Arial;
-	font-size: 1em;
-	font-weight: bold;
-	left: 0;
-	right: 0;
-	padding: 5px;
-	background: initial;
-
-    .inner-msg {
-      background: #fff;
-      height: 30px;
-      line-height: 30px;
-      padding: 0 5px;
-    }
-  }
-
-  .green {
-    color: green;
-  }
-
-  .red {
-    color: red;
   }
 
   input {
@@ -291,19 +291,22 @@
           top: 700px;
         }
       }
+
+      .user-msg {
+        top: 660px;
+
+        .inner-msg {
+          height: 60px;
+        }
+      }
+
+      .match-error {
+        top: 280px;
+      }
     }
 
     #recaptcha-widget {
       top: 700px;
-    }
-
-    .match-error {
-      top: 280px;
-    }
-
-    .user-msg {
-      top: 640px;
-      height: 50px;
     }
   }
 

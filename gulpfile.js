@@ -71,7 +71,8 @@ var config = {
     'app/bower_components/angular-waypoints/dist/angular-waypoints.min.js'
   ],
   html: ['./app/index.html', './app/**/*.html'],
-  js: ['app/js/**/*.js', 'app/js/*.js'],
+  js: ['app/js/**/*.js', 'app/js/*.js', ],
+  backEndJs: ['server/*.js', 'server/**/*.js'],
   bower: ['app/bower_components/**/*'],
   img: ['app/images/*.*', 'app/images/**/*.*'],
   css: ['app/css/*.css'],
@@ -126,7 +127,7 @@ gulp.task('inject-dev-index', function() {
 
 
 gulp.task('jshint', function (done) {
-  return gulp .src(config.js)
+  return gulp .src(config.js.concat(config.backEndJs))
               .pipe(jshint())
               .pipe(jshint.reporter('jshint-stylish'));
 });

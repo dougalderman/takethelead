@@ -141,7 +141,7 @@
             <h2>Or fill out the contact form below</h2>
             <div class="contact-form-container">
               <div class="contact-form">
-                <form ng-submit="contactForm()">
+                <form ng-submit="Main.contactForm()">
                   <div class="name">
                     <input id="name" type="text" ng-model="Main.contact.name" placeholder="Name" required>
                   </div>
@@ -166,11 +166,11 @@
                   <div class="submit" ng-hide="Main.inRecaptcha">
                     <input class="button" type="submit" value="Submit">
                   </div>
-                  <!--<div id="recaptcha-widget" ng-show="Main.inRecaptcha">
-                  </div>-->
-                  <div class="user-msg" ng-class="{green: formSuccess, red: !formSuccess}" ng-show="userMsg">
+                  <div id="recaptcha-widget" ng-show="Main.inRecaptcha">
+                  </div>
+                  <div class="user-msg" ng-class="{green: Main.formSuccess, red: !Main.formSuccess}" ng-show="Main.userMsg">
 					<div class="inner-msg">
-                      {{userMsg}}
+                      {{Main.userMsg}}
 				    </div>
 				  </div>
                 </form>

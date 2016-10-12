@@ -91,7 +91,7 @@
 	var onLoadCallback = function() {
       grecaptcha.render(ctrl.currentRecaptchaId,
                         {
-			             'sitekey' : '6LdOOAsAAAAAAEtjbq6sch1VWiMoBnX4bw4dIKfz',
+			             'sitekey' : '6LeLlicTAAAAAM1lPtaNLtUOKIOxGjsBw600K2_I',
 			             'callback' : recaptchaCB,
 			             'expired-callback': recaptchaExpired
                         }

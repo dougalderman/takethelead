@@ -5,8 +5,8 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose');
 
-// var contactsCtrl = require('./controllers/contactsCtrl.js');
-// var recaptchaCtrl = require('./controllers/recaptchaCtrl.js');
+var contactsCtrl = require('./controllers/contactsCtrl.js');
+var recaptchaCtrl = require('./controllers/recaptchaCtrl.js');
 
 var app = express();
 
@@ -25,10 +25,10 @@ app.use(expressSession({
 // Endpoints
 
 // Recaptcha
-// app.post('/api/recaptcha/', recaptchaCtrl.create); // Verify recaptcha
+app.post('/api/recaptcha/', recaptchaCtrl.create); // Verify recaptcha
 
 // Contacts
-// app.post('/api/contacts/', contactsCtrl.create); // Create new contact. Contacts collection.
+app.post('/api/contacts/', contactsCtrl.create); // Create new contact. Contacts collection.
 
 //DB and Server Init
 var mongoUri = process.env.TTL_MONGO_URI,
