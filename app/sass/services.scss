@@ -149,6 +149,8 @@
   }
 
   @media screen and (max-width: 500px) {
+    height: $services-height * 1.9;
+
     .packages {
       img {
         float: none;
@@ -158,7 +160,7 @@
   }
 
   @media screen and (max-width: 400px) {
-    height: $services-height * 1.9;
+    height: $services-height * 2.1;
   }
 
   @media screen and (max-width: 300px) {
