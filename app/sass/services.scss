@@ -163,5 +163,11 @@
 
   @media screen and (max-width: 300px) {
     height: $services-height * 2.3;
+
+    .packages {
+      img {
+        height: 200px;
+      }
+    }
   }
 }
