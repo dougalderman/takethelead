@@ -151,12 +151,6 @@
 }
 
 @media screen and (max-width: 525px)  {
-
-  /* .fixed-navbar {
-    height: 12em;
-    line-height: 4em;
-  } */
-
   .name-navbar {
     width: 50%;
     padding-right: 1em;
@@ -165,12 +159,6 @@
 }
 
 @media screen and (max-width: 400px)  {
-
-  /* .fixed-navbar {
-    height: 12em;
-    line-height: 4em;
-  } */
-
   .name-navbar {
     width: 50%;
     padding-right: 1em;
@@ -179,9 +167,14 @@
 }
 
 @media screen and (max-width: 350px)  {
-
   .fixed-navbar {
     height: 12em;
     line-height: 4em;
+  }
+}
+
+@media screen and (max-width: 280px)  {
+  .mobile-navbar-icon {
+    right: 2em;
   }
 }

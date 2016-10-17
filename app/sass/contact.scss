@@ -319,4 +319,15 @@
       margin-left: -120px;
      }
   }
+
+  @media screen and (max-width: 280px)  {
+
+    input {
+      padding-left: 15px;
+    }
+
+    textarea {
+      padding-left: 15px;
+    }
+  }
 }
