@@ -36,3 +36,26 @@ a {
   margin-top: 10px;
   margin-right: 10px;
 }
+
+@keyframes slide-right {
+  from {
+    position: relative;
+    right: 70px;
+  }
+  to {
+    position: relative;
+    right: 0;
+  }
+}
+
+@keyframes slide-left {
+  from {
+    position: relative;
+    left: 70px;
+  }
+  to {
+    position: relative;
+    left: 0;
+  }
+}
+
