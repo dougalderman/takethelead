@@ -124,7 +124,7 @@
           <div id="services" zum-waypoint="waypoints" down="inServices.down" up="inServices.up" offset="10%">
             <h1>Services and Pricing</h1>
             <div class="packages">
-              <div ng-class="{slider: waypoints.inServices.down}">
+              <div id="services-home" ng-class="{slider: waypoints.inServices.down  && !Main.servicesSlid}">
                 <h2>Take the lead in your home</h2>
                 <img ng-src="images/Dog_at_Home.jpg" alt="Dog at Home">
                 <p>Through our “Take the Lead in your home” program, our goal is to guide you towards the relationship you are looking to have with your dog.  We work with you in your home on the specific behavior problems you would like to address while providing structure, tools, encouragement and support.</p>
@@ -135,7 +135,7 @@
                   <a href="#contact">Book Now</a>
                 </div>
               </div>
-              <div ng-class="{slider: waypoints.inServices.down}">
+              <div ng-class="{slider: waypoints.inServices.down && !Main.servicesSlid}">
                 <h2>Take the lead on your walk</h2>
                 <img ng-src="images/Dog_on_Walk.jpg" alt="Dog on Walk">
                 <ul>

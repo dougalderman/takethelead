@@ -106,7 +106,16 @@
 
     $(document).ready(function() {
 
+      ctrl.servicesSlid = false;
+
       $.localScroll();
+
+      function listener(e) {
+        ctrl.servicesSlid = true;
+      }
+
+      var e = document.getElementById("services-home");
+      e.addEventListener("animationend", listener, false);
 
     });
 
