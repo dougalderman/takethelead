@@ -16,6 +16,13 @@
     margin-bottom: 30px;
   }
 
+  h2 {
+    color: $about-h2-color;
+    font-size: $about-font-size - .7;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+  }
+
   img {
     padding: 20px 0;
     width: 250px;
@@ -28,13 +35,13 @@
     text-align: left;
     padding: 0 10px;
 
-    h2 {
+    h3 {
       font-size: $about-font-size - 1;
-      color: $about-h2-color;
+      color: $about-h3-color;
       margin-bottom: 20px;
     }
 
-    h3 {
+    h4 {
       font-size: $about-font-size - 1.25;
       margin-bottom: 15px;
     }
@@ -69,7 +76,7 @@
   }
 
   @media screen and (max-width: 640px) and (orientation: portrait) {
-    height: $about-height * 1.3;
+    height: $about-height * 1.4;
   }
 
   @media screen and (max-width: 640px) and (orientation: landscape) {
@@ -78,10 +85,10 @@
 
   @media screen and (max-width: 400px) {
     font-size: $about-font-size * .6;
-    height: $about-height * 1.4;
+    height: $about-height * 1.5;
   }
 
   @media screen and (max-width: 300px) {
-    height: $about-height * 1.5;
+    height: $about-height * 1.8;
   }
 }

@@ -61,11 +61,25 @@
       text-align: left;
     }
 
-    img {
-      padding: 30px 0;
-      height: 240px;
-      float: right;
-      margin-left: 30px;
+    .ttl-home, .ttl-walk {
+      img {
+        padding: 30px 0;
+        height: 240px;
+      }
+    }
+
+    .ttl-home {
+      img {
+        float: left;
+        margin-right: 30px;
+      }
+    }
+
+    .ttl-walk {
+      img {
+        float: right;
+        margin-left: 30px;
+      }
     }
 
     div {
@@ -119,20 +133,22 @@
 
   @media screen and (max-width: 1280px) {
     font-size: $services-font-size * .95;
-    height: $services-height * 1.2;
+    height: $services-height * 1.1;
   }
 
   @media screen and (max-width: 1000px) {
     .packages {
-      img {
-        float: none;
-        margin-left: 0;
+      .ttl-home, .ttl-walk {
+        img {
+          float: none;
+          margin: 0 0;
+        }
       }
     }
   }
 
   @media screen and (max-width: 800px) and (orientation: portrait) {
-    height: $services-height * 1.3;
+    height: $services-height * 1.2;
   }
 
   @media screen and (max-width: 800px) and (orientation: landscape) {
@@ -149,9 +165,18 @@
     .packages {
       display: inherit;
 
-      img {
-        float: right;
-        margin-left: 30px;
+      .ttl-home {
+        img {
+          float: left;
+          margin-right: 30px;
+        }
+      }
+
+      .ttl-walk {
+        img {
+          float: right;
+          margin-left: 30px;
+        }
       }
 
       div {
@@ -166,8 +191,6 @@
           animation: initial;
         }
       }
-
-
     }
   }
 
@@ -182,10 +205,12 @@
   @media screen and (max-width: 500px) {
     height: $services-height * 1.9;
 
-    .packages {
-      img {
-        float: none;
-        margin-left: 0;
+     .packages {
+      .ttl-home, .ttl-walk {
+        img {
+          float: none;
+          margin: 0 0;
+        }
       }
     }
   }
