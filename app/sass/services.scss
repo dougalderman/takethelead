@@ -82,7 +82,7 @@
       }
     }
 
-    div {
+    > div {
       width: 50%;
       background: $services-packages-background;
       color: $services-packages-color;
@@ -90,13 +90,13 @@
       padding: 20px 10px;
       text-align: center;
 
-      &:first-child {
+      &.ttl-home {
         &.slider {
           animation: slide-right 2s 0s 1 ease;
         }
       }
 
-      &:nth-child(2) {
+      &.ttl-walk {
         &.slider {
           animation: slide-left 2s 0s 1 ease;
         }
@@ -165,30 +165,26 @@
     .packages {
       display: inherit;
 
-      .ttl-home {
-        img {
-          float: left;
-          margin-right: 30px;
-        }
-      }
+       > div {
+         width: 100%;
+         margin: 0 auto 30px;
 
-      .ttl-walk {
-        img {
-          float: right;
-          margin-left: 30px;
-        }
-      }
+         &.ttl-home {
+           animation: initial;
 
-      div {
-        width: 100%;
-        margin: 0 auto 30px;
+           img {
+             float: left;
+             margin-right: 30px;
+           }
+         }
 
-        &:first-child {
+        &.ttl-walk {
           animation: initial;
-        }
 
-        &:nth-child(2) {
-          animation: initial;
+          img {
+            float: right;
+            margin-left: 30px;
+          }
         }
       }
     }
