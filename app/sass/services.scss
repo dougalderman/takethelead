@@ -181,23 +181,23 @@
   }
 
   @media screen and (max-width: 640px) and (orientation: portrait) {
-    height: $services-height * 2;
-  }
-
-  @media screen and (max-width: 640px) and (orientation: landscape) {
-    height: $services-height * 3;
-  }
-
-  @media screen and (max-width: 500px) {
     height: $services-height * 2.1;
   }
 
-  @media screen and (max-width: 400px) {
+  @media screen and (max-width: 640px) and (orientation: landscape) {
+    height: $services-height * 3.2;
+  }
+
+  @media screen and (max-width: 500px) {
     height: $services-height * 2.2;
   }
 
-  @media screen and (max-width: 300px) {
+  @media screen and (max-width: 400px) {
     height: $services-height * 2.3;
+  }
+
+  @media screen and (max-width: 300px) {
+    height: $services-height * 2.4;
 
     .packages {
       img {
