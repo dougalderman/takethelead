@@ -76,16 +76,16 @@
   }
 
   @media screen and (max-width: 640px) and (orientation: portrait) {
-    height: $about-height * 1.4;
+    height: $about-height * 1.5;
   }
 
   @media screen and (max-width: 640px) and (orientation: landscape) {
-    height: $about-height * 2.1;
+    height: $about-height * 2.3;
   }
 
   @media screen and (max-width: 400px) {
     font-size: $about-font-size * .6;
-    height: $about-height * 1.5;
+    height: $about-height * 1.6;
   }
 
   @media screen and (max-width: 300px) {

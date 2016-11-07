@@ -67,7 +67,7 @@
     font-size: $bio-font-size * .8;
   }
 
-  @media screen and (max-width: 640px) {
+  @media screen and (max-width: 640px) and (orientation: portrait) {
     font-size: $bio-font-size * .7;
     height: $bio-height * 1.8;
     padding-top: 150px;
@@ -81,6 +81,10 @@
         margin: 0;
       }
     }
+  }
+
+  @media screen and (max-width: 640px) and (orientation: landscape) {
+    height: $bio-height * 2.5;
   }
 
   @media screen and (max-width: 400px) {
