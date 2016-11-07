@@ -69,7 +69,7 @@
 
   @media screen and (max-width: 640px) and (orientation: portrait) {
     font-size: $bio-font-size * .7;
-    height: $bio-height * 1.8;
+    height: $bio-height * 1.9;
     padding-top: 150px;
 
     .bio-pic1, .bio-pic2 {
@@ -98,6 +98,6 @@
   }
 
   @media screen and (max-width: 300px) {
-    height: $bio-height * 1.9;
+    height: $bio-height * 2;
   }
 }
