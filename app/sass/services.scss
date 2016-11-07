@@ -172,20 +172,10 @@
 
       #services-home {
         animation: initial;
-
-        img {
-          float: left;
-          margin-right: 30px;
-        }
       }
 
       #services-walk {
         animation: initial;
-
-        img {
-          float: right;
-          margin-left: 30px;
-        }
       }
     }
   }
@@ -200,15 +190,6 @@
 
   @media screen and (max-width: 500px) {
     height: $services-height * 1.9;
-
-    .packages {
-      .ttl-home, .ttl-walk {
-        img {
-          float: none;
-          margin: 0;
-        }
-      }
-    }
   }
 
   @media screen and (max-width: 400px) {
