@@ -141,7 +141,7 @@
       .ttl-home, .ttl-walk {
         img {
           float: none;
-          margin: 0 0;
+          margin: 0;
         }
       }
     }
@@ -165,26 +165,26 @@
     .packages {
       display: inherit;
 
-       > div {
-         width: 100%;
-         margin: 0 auto 30px;
+      > div {
+        width: 100%;
+        margin: 0 auto 30px;
+      }
 
-         &.ttl-home {
-           animation: initial;
+      #services-home {
+        animation: initial;
 
-           img {
-             float: left;
-             margin-right: 30px;
-           }
-         }
+        img {
+          float: left;
+          margin-right: 30px;
+        }
+      }
 
-        &.ttl-walk {
-          animation: initial;
+      #services-walk {
+        animation: initial;
 
-          img {
-            float: right;
-            margin-left: 30px;
-          }
+        img {
+          float: right;
+          margin-left: 30px;
         }
       }
     }
@@ -201,11 +201,11 @@
   @media screen and (max-width: 500px) {
     height: $services-height * 1.9;
 
-     .packages {
+    .packages {
       .ttl-home, .ttl-walk {
         img {
           float: none;
-          margin: 0 0;
+          margin: 0;
         }
       }
     }

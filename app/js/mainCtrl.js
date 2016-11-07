@@ -115,7 +115,7 @@
       }
 
       var e = document.getElementById("services-home");
-      e.addEventListener("animationend", listener, false);
+      e.addEventListener("animationstart", listener, false);
 
     });
 
