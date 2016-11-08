@@ -89,7 +89,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      animation: slide-right 2s .2s 1 ease;
+      animation: slide-right 1.5s 0s 1 ease;
 
       &:hover {
         background-color: $home-button-one-hover-highlight;
@@ -104,7 +104,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      animation: slide-left 2s .2s 1 ease;
+      animation: slide-left 1.5s 0s 1 ease;
 
       &:hover {
         background-color: $home-button-two-hover-highlight;
