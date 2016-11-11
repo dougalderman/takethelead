@@ -19,20 +19,22 @@ $home-button-two-hover-highlight: #d500ff;
 $about-height: 150vh;
 $about-color: #000;
 $about-h1-color: darkblue;
-$about-h2-color: limegreen;
+$about-h2-color: rgb(128, 34, 0);
+$about-h3-color: limegreen;
 $about-background: #fff;
 $about-font-size: 2.3em;
 
 /* Bio */
-$bio-height: 150vh;
+$bio-height: 155vh;
 $bio-color: #000;
-$bio-h1-color: rgba(255, 209, 0, .83);
+$bio-h1-color: rgb(255, 209, 0);
+$bio-h2-color: rgb(255, 112, 0);
 $bio-p-color: #fff;
 $bio-background: rgba(49, 87, 124, .56);
 $bio-font-size: 2.3em;
 
 /* Services */
-$services-height: 170vh;
+$services-height: 165vh;
 $services-color: #000;
 $services-h1-color: #8b007a;
 $services-h2-color: darkblue;
