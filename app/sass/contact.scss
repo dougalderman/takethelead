@@ -311,6 +311,10 @@
     }
   }
 
+  @media screen and (max-width: 850px) and (orientation: landscape)  {
+    height: $contact-height * 1.3;
+  }
+
   @media screen and (max-width: 340px)  {
 
     font-size: $contact-font-size * .7;
