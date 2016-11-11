@@ -1,8 +1,8 @@
 @import 'variables';
 
 #services {
-  height: $services-height;
-  padding-top: 100px;
+  /* height: $services-height; */
+  padding: 100px 7px;
   color: $services-color;
   background: $services-background;
   font-family: 'Helvetica', sans-serif;
@@ -133,7 +133,7 @@
 
   @media screen and (max-width: 1280px) {
     font-size: $services-font-size * .95;
-    height: $services-height * 1.1;
+    /* height: $services-height * 1.1; */
   }
 
   @media screen and (max-width: 1000px) {
@@ -147,13 +147,13 @@
     }
   }
 
-  @media screen and (max-width: 800px) and (orientation: portrait) {
+  /* @media screen and (max-width: 800px) and (orientation: portrait) {
     height: $services-height * 1.2;
   }
 
   @media screen and (max-width: 800px) and (orientation: landscape) {
     height: $services-height * 1.7;
-  }
+  } */
 
   @media screen and (max-width: 640px) {
     padding-top: 150px;
@@ -180,7 +180,7 @@
     }
   }
 
-  @media screen and (max-width: 640px) and (orientation: portrait) {
+  /* @media screen and (max-width: 640px) and (orientation: portrait) {
     height: $services-height * 2.1;
   }
 
@@ -194,10 +194,10 @@
 
   @media screen and (max-width: 400px) {
     height: $services-height * 2.3;
-  }
+  } */
 
   @media screen and (max-width: 300px) {
-    height: $services-height * 2.4;
+    /* height: $services-height * 2.4; */
 
     .packages {
       img {
