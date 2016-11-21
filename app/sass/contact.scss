@@ -100,8 +100,8 @@
         width: 120px;
         margin-left: -60px;
         padding: 0;
+        text-align: center;
         background-color: rgb(81, 50, 203);
-
 
         :hover {
           cursor: pointer;
@@ -135,7 +135,7 @@
       font-family: Arial;
       font-size: 1.2em;
       color: white;
-      background-color: rgb(81, 50, 203);
+      /* background-color: rgb(81, 50, 203); */
       width: inherit;
     }
 
