@@ -104,6 +104,33 @@
       }
 	};
 
+    var missingRequiredFields = function() {
+      var missingRequired = false;
+      ctrl.emptyField.name = false;
+      ctrl.emptyField.email = false;
+      ctrl.emptyField.emailAgain = false;
+      ctrl.emptyField.message = false;
+
+      if (!ctrl.contact.name) {
+        missingRequired = true;
+        ctrl.emptyField.name = true;
+      }
+      if (!ctrl.contact.email) {
+        missingRequired = true;
+        ctrl.emptyField.email = true;
+      }
+      if (!ctrl.contact.emailAgain) {
+        missingRequired = true;
+        ctrl.emptyField.emailAgain = true;
+      }
+      if (!ctrl.contact.message) {
+        missingRequired = true;
+        ctrl.emptyField.message = true;
+      }
+
+      return missingRequired;
+    }
+
     $(document).ready(function() {
 
       ctrl.servicesSlid = false;
@@ -117,25 +144,10 @@
       var e = document.getElementById("services-home");
       e.addEventListener("animationstart", listener, false);
 
-      $('form').submit(function(){
-        var required = $('[required="true"]'); // change to [required] if not using true option as part of the attribute as it is not really needed.
-        var error = false;
-
-        for (var i = 0; i <= (required.length - 1);i++) {
-          if(required[i].value == '') { // tests that each required value does not equal blank, you could put in more stringent checks here if you wish.
-            required[i].style.backgroundColor = 'rgb(255,155,155)';
-            error = true; // if any inputs fail validation then the error variable will be set to true;
-          }
-        }
-
-        if(error) // if error is true;
-        {
-          return false; // stop the form from being submitted.
-        }
-      });
     });
 
     ctrl.contact = {};
+    ctrl.emptyField = {};
 	ctrl.userMsg = '';
     ctrl.emailMatchError = false;
 	ctrl.formSuccess = false;
@@ -157,7 +169,11 @@
     ctrl.contactForm = function() {
       console.log('in contact form');
       console.log('ctrl.contact', ctrl.contact);
-      if (ctrl.contact.email === ctrl.contact.emailAgain) {
+      if (missingRequiredFields()) {
+        ctrl.formSuccess = false;
+        ctrl.userMsg = 'Please fill out highlighted required fields'
+      }
+      else if (ctrl.contact.email === ctrl.contact.emailAgain) {
         ctrl.userMsg = '';
         ctrl.inRecaptcha = true;
         ctrl.emailMatchError = false;

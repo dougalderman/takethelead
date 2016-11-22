@@ -194,6 +194,10 @@
     &:required {
       box-shadow: none;
     }
+
+    &.highlight {
+      background: rgba(255, 192, 236, .67);
+    }
   }
 
   textarea {
@@ -213,6 +217,10 @@
 
     &:required {
       box-shadow: none;
+    }
+
+    &.highlight {
+      background: rgba(255, 192, 236, .67);
     }
   }
 
