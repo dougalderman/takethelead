@@ -196,9 +196,17 @@ gulp.task('minify-css', function () {
       .pipe(sass.sync().on('error', sass.logError))
       .pipe(concat('takethelead.min.css'))
       .pipe(sourcemaps.init())
-        .pipe(cleanCSS())
+      .pipe(cleanCSS())
       .pipe(sourcemaps.write('./'))
-      .pipe(gulp.dest('dist/css'));
+      .pipe(gulp.dest('dist/tempcss'));
+});
+
+gulp.task('dist-autoprefixer', function () {
+   return gulp.src('dist/tempcss/*.css')
+        .pipe(sourcemaps.init())
+        .pipe(postcss([ autoprefixer({ browsers: ['last 5 versions'] }) ]))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('dist/css'));
 });
 
 gulp.task('copy-bower', function() {
@@ -229,7 +237,7 @@ gulp.task('copy-assets', ['copy-index', 'copy-bower', 'copy-img']);
 
 gulp.task('js-dist', ['jshint', 'minify-js']);
 
-gulp.task('css-dist', ['sasslint', 'minify-css']);
+gulp.task('css-dist', ['sasslint', 'minify-css', 'dist-autoprefixer']);
 
 
 //---------------------------
