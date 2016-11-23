@@ -129,7 +129,7 @@
       }
 
       return missingRequired;
-    }
+    };
 
     $(document).ready(function() {
 
@@ -171,7 +171,7 @@
       console.log('ctrl.contact', ctrl.contact);
       if (missingRequiredFields()) {
         ctrl.formSuccess = false;
-        ctrl.userMsg = 'Please fill out highlighted required fields'
+        ctrl.userMsg = 'Please fill out highlighted required fields';
       }
       else if (ctrl.contact.email === ctrl.contact.emailAgain) {
         ctrl.userMsg = '';

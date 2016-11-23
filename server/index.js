@@ -11,6 +11,7 @@ var recaptchaCtrl = require('./controllers/recaptchaCtrl.js');
 var app = express();
 
 var app_dir = process.env.TTL_APP_DIR;
+console.log('app_dir = ' + app_dir);
 
 app.use(bodyParser.json());
 

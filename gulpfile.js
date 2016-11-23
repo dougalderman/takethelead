@@ -258,6 +258,10 @@ gulp.task('sass-after-watch', function(done) {
 // BUILD TASKS
 //---------------------------
 
+gulp.task('build', function(done) {
+  runSequence('js-dev', 'sass-dev', 'autoprefixer', 'clean-temp-css', 'inject-dev-index', done);
+});
+
 gulp.task('default', function(done) {
   runSequence('js-dev', 'sass-dev', 'autoprefixer', 'clean-temp-css', 'inject-dev-index', ['watch', 'start-server'], done);
 });
