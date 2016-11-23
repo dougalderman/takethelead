@@ -62,6 +62,9 @@ var cleanCSS        = require('gulp-clean-css');
 var jshint          = require('gulp-jshint');
 var jshintStyle     = require('jshint-stylish');
 var inject          = require('gulp-inject');
+var postcss      = require('gulp-postcss');
+var sourcemaps   = require('gulp-sourcemaps');
+var autoprefixer = require('autoprefixer');
 
 //---------------------------
 //CONFIG VARIABLES
@@ -103,9 +106,15 @@ gulp.task('reload-browser', function () {
 });
 
 gulp.task('clean-dev-css', function(done) {
-    return gulp .src('app/css', {read: false})
+    return gulp .src(['app/css', 'app/tempcss'], {read: false})
                 .pipe(clean());
 });
+
+gulp.task('clean-temp-css', function(done) {
+    return gulp .src('app/tempcss', {read: false})
+                .pipe(clean());
+});
+
 
 gulp.task('js-dev', ['jshint']);
 
@@ -139,7 +148,7 @@ gulp.task('jshint', function (done) {
 gulp.task('sass-dev', ['sasslint', 'clean-dev-css'], function (done) {
   return gulp .src(config.sass)
               .pipe(sass.sync().on('error', sass.logError))
-              .pipe(gulp.dest('app/css'));
+              .pipe(gulp.dest('app/tempcss'));
 });
 
 gulp.task('sasslint', function() {
@@ -152,6 +161,14 @@ gulp.task('sasslint', function() {
               .pipe(sassLint.format())
               .pipe(sassLint.failOnError());
               //.pipe(scsslint({ customReport: scssLintStyle }));
+});
+
+gulp.task('autoprefixer', function () {
+   return gulp.src('app/tempcss/*.css')
+        .pipe(sourcemaps.init())
+        .pipe(postcss([ autoprefixer({ browsers: ['last 5 versions'] }) ]))
+        .pipe(sourcemaps.write('.'))
+        .pipe(gulp.dest('app/css'));
 });
 
 //---------------------------
@@ -242,7 +259,7 @@ gulp.task('sass-after-watch', function(done) {
 //---------------------------
 
 gulp.task('default', function(done) {
-  runSequence('js-dev', 'sass-dev', 'inject-dev-index', ['watch', 'start-server'], done);
+  runSequence('js-dev', 'sass-dev', 'autoprefixer', 'clean-temp-css', 'inject-dev-index', ['watch', 'start-server'], done);
 });
 
 gulp.task('dist', function(done) {
