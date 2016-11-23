@@ -23,6 +23,10 @@
     @media screen and (max-width: 640px) {
       height: 95vh;
     }
+
+    @media screen and (max-width: 400px) {
+      height: 700px;
+    }
   }
 }
 
