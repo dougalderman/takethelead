@@ -181,6 +181,13 @@ gulp.task('clean-dist', function () {
         .pipe(clean());
 });
 
+gulp.task('clean-dist-tempcss', function () {
+  return gulp
+        .src('dist/tempcss', {read: false})
+        .pipe(clean());
+});
+
+
 gulp.task('minify-js', function () {
   return gulp
     .src(config.js)
@@ -237,7 +244,7 @@ gulp.task('copy-assets', ['copy-index', 'copy-bower', 'copy-img']);
 
 gulp.task('js-dist', ['jshint', 'minify-js']);
 
-gulp.task('css-dist', ['sasslint', 'minify-css', 'dist-autoprefixer']);
+gulp.task('css-dist', ['sasslint', 'minify-css', 'dist-autoprefixer', 'clean-dist-tempcss']);
 
 
 //---------------------------
