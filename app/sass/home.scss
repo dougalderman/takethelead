@@ -5,6 +5,7 @@
   top: 50px;
   margin-top: 0;
   margin-bottom: 20px;
+  width: 100%;
   background: black;
   text-align: center;
   font-size: $home-font-size;
@@ -20,7 +21,7 @@
     }
 
     @media screen and (max-width: 640px) {
-      height: 90vh;
+      height: 95vh;
     }
   }
 }
@@ -44,7 +45,7 @@
 
     h1 {
       margin: 0;
-      padding: 0;
+      padding: 0 7px;
     }
 
     @media screen and (max-width: 1280px) {

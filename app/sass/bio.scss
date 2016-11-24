@@ -1,8 +1,8 @@
 @import 'variables';
 
 #bio {
-  height: $bio-height;
-  padding-top: 100px;
+  /* height: $bio-height; */
+  padding: 100px 7px;
   color: $bio-color;
   background: $bio-background;
   font-family: 'Helvetica', sans-serif;
@@ -56,12 +56,12 @@
 
   @media screen and (max-width: 1280px) {
     font-size: $bio-font-size * .9;
-    height: $bio-height * 1.1;
+    /* height: $bio-height * 1.1; */
   }
 
-  @media screen and (max-width: 1000px) {
+  /* @media screen and (max-width: 1000px) {
     height: $bio-height * 1.2;
-  }
+  } */
 
   @media screen and (max-width: 800px) and (orientation: portrait) {
     font-size: $bio-font-size * .8;
@@ -69,12 +69,12 @@
 
   @media screen and (max-width: 800px) and (orientation: landscape) {
     font-size: $bio-font-size * .8;
-    height: $bio-height * 1.7;
+    /* height: $bio-height * 1.7; */
   }
 
   @media screen and (max-width: 640px) and (orientation: portrait) {
     font-size: $bio-font-size * .7;
-    height: $bio-height * 1.9;
+    /* height: $bio-height * 1.9; */
     padding-top: 150px;
 
     .bio-pic1, .bio-pic2 {
@@ -88,9 +88,9 @@
     }
   }
 
-  @media screen and (max-width: 640px) and (orientation: landscape) {
+  /* @media screen and (max-width: 640px) and (orientation: landscape) {
     height: $bio-height * 2.8;
-  }
+  } */
 
   @media screen and (max-width: 400px) {
     font-size: $bio-font-size * .6;
@@ -102,7 +102,7 @@
     }
   }
 
-  @media screen and (max-width: 300px) {
+  /* @media screen and (max-width: 300px) {
     height: $bio-height * 2;
-  }
+  } */
 }

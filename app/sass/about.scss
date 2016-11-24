@@ -1,8 +1,8 @@
 @import 'variables';
 
 #about {
-  height: $about-height;
-  padding-top: 100px;
+  /* height: $about-height; */
+  padding: 100px 7px;
   color: $about-color;
   background: $about-background;
   font-family: 'Helvetica', sans-serif;
@@ -49,20 +49,20 @@
 
   @media screen and (max-width: 1280px) {
     font-size: $about-font-size * .9;
-    height: $about-height * 1.1;
+    /* height: $about-height * 1.1; */
   }
 
   @media screen and (max-width: 800px) {
     font-size: $about-font-size * .8;
   }
 
-  @media screen and (max-width: 800px) and (orientation: portrait) {
+  /* @media screen and (max-width: 800px) and (orientation: portrait) {
     height: $about-height * 1.2;
   }
 
   @media screen and (max-width: 800px) and (orientation: landscape) {
     height: $about-height * 1.6;
-  }
+  } */
 
   @media screen and (max-width: 640px) {
     font-size: $about-font-size * .7;
@@ -75,20 +75,20 @@
     }
   }
 
-  @media screen and (max-width: 640px) and (orientation: portrait) {
+  /* @media screen and (max-width: 640px) and (orientation: portrait) {
     height: $about-height * 1.5;
   }
 
   @media screen and (max-width: 640px) and (orientation: landscape) {
     height: $about-height * 2.5;
-  }
+  } */
 
   @media screen and (max-width: 400px) {
     font-size: $about-font-size * .6;
-    height: $about-height * 1.6;
+    /* height: $about-height * 1.6; */
   }
 
-  @media screen and (max-width: 300px) {
+  /*  @media screen and (max-width: 300px) {
     height: $about-height * 1.8;
-  }
+  } */
 }

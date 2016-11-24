@@ -2,7 +2,8 @@
 
 #contact {
   height: $contact-height;
-  padding-top: 150px;
+  /* padding-top: 150px; */
+  padding: 100px 7px;
   margin-bottom: 50px;
   font-family: 'Helvetica', sans-serif;
   font-size: $contact-font-size;
@@ -99,6 +100,8 @@
         width: 120px;
         margin-left: -60px;
         padding: 0;
+        text-align: center;
+        background-color: rgb(81, 50, 203);
 
         :hover {
           cursor: pointer;
@@ -108,12 +111,12 @@
 
     .user-msg {
       position: absolute;
-      top: 690px;
+      top: 680px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-family: Arial;
-      font-size: 1em;
+      font-size: $contact-font-size - 1.6;
       font-weight: bold;
       left: 0;
       right: 0;
@@ -130,10 +133,13 @@
 
     .button {
       font-family: Arial;
-      font-size: 1.2em;
+      font-size: $contact-font-size - 1.3;
       color: white;
-      background-color: rgb(81, 50, 203);
+      /* background-color: rgb(81, 50, 203); */
+      background: transparent;
       width: inherit;
+      text-align: center;
+      padding: 0;
     }
 
     .match-error {
@@ -144,7 +150,7 @@
       color: red;
       font-family: Arial;
       font-weight: bold;
-      font-size: 1em;
+      font-size: $contact-font-size - 1.6;
     }
 
     .green {
@@ -188,6 +194,10 @@
     &:required {
       box-shadow: none;
     }
+
+    &.highlight {
+      background: rgba(255, 192, 236, .67);
+    }
   }
 
   textarea {
@@ -207,6 +217,10 @@
 
     &:required {
       box-shadow: none;
+    }
+
+    &.highlight {
+      background: rgba(255, 192, 236, .67);
     }
   }
 
@@ -241,7 +255,11 @@
   @media screen and (max-width: 850px)  {
 
     font-size: $contact-font-size * .8;
-    height: $contact-height * 1.3;
+    /* height: $contact-height * 1.3; */
+
+    .contact-form-container {
+      height: $contact-height - 40;
+    }
 
     .contact-form {
       height: 700px;
@@ -293,7 +311,7 @@
       }
 
       .user-msg {
-        top: 660px;
+        top: 630px;
 
         .inner-msg {
           height: 60px;
