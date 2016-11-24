@@ -209,7 +209,7 @@ gulp.task('minify-css', function () {
 });
 
 gulp.task('dist-autoprefixer', function () {
-   return gulp.src('dist/tempcss/*.css')
+   return gulp.src('dist/tempcss/*.min.css')
         .pipe(sourcemaps.init())
         .pipe(postcss([ autoprefixer({ browsers: ['last 5 versions'] }) ]))
         .pipe(sourcemaps.write('.'))
@@ -244,7 +244,7 @@ gulp.task('copy-assets', ['copy-index', 'copy-bower', 'copy-img']);
 
 gulp.task('js-dist', ['jshint', 'minify-js']);
 
-gulp.task('css-dist', ['sasslint', 'minify-css', 'dist-autoprefixer', 'clean-dist-tempcss']);
+gulp.task('css-dist', ['sasslint', 'minify-css']);
 
 
 //---------------------------
@@ -282,5 +282,5 @@ gulp.task('default', function(done) {
 });
 
 gulp.task('dist', function(done) {
-  runSequence('clean-dist', 'js-dist', 'css-dist', 'copy-assets', 'inject-dist-index', done);
+  runSequence('clean-dist', 'js-dist', 'css-dist', 'dist-autoprefixer', 'clean-dist-tempcss', 'copy-assets', 'inject-dist-index', done);
 });
