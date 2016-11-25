@@ -266,7 +266,7 @@ gulp.task('watch-dev-sass', function(done) {
 });
 
 gulp.task('sass-after-watch', function(done) {
-  runSequence('sass-dev', 'reload-browser', done);
+  runSequence('sass-dev', 'autoprefixer', 'clean-temp-css', 'reload-browser', done);
 });
 
 //---------------------------
