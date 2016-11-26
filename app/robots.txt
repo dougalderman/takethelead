@@ -1,2 +1,2 @@
 User-agent: *
-Disallow: /bower_components/
+Disallow: /
