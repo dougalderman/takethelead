@@ -24,10 +24,6 @@
   font-family: Arial;
   text-decoration: none;
 
-  &:hover {
-    color: $navbar-hover-highlight;
-  }
-
   &.highlight {
     color: $navbar-hover-highlight;
     text-decoration: underline;
@@ -36,6 +32,10 @@
 
 #name-fixednav, #about-fixednav, #bio-fixednav, #services-fixednav, #contact-fixednav {
   @extend %nav-bar;
+
+    &:hover {
+      color: $navbar-hover-highlight;
+    }
 }
 
 .ul-navbar {
@@ -72,37 +72,33 @@
 
   ul {
     margin: 0;
-    padding: 0;
+    padding: .5em 1em;
   }
 
   li {
     display: block;
-    margin-top: 2.5em;
-    margin-bottom: 2.5em;
-    margin-left: 1.666667em;
+    /* margin-top: 2.5em;
+    margin-bottom: 2.5em; */
+    height: 3em;
+    line-height: 3em;
+    /* margin-left: 1.666667em; */
+  }
+
+  a {
+    display: block;
+    height: inherit;
+    line-height: inherit;
   }
 }
 
 #about-mobilenav, #bio-mobilenav, #services-mobilenav, #contact-mobilenav {
   @extend %nav-bar;
-}
 
-.sidenav {
-  background-color: $sidenav-background-color;
-
-  a {
-    font-size: 1.3em;
-    color: $navbar-color;
-    font-weight: bold;
-  }
-
-  li {
-    :hover {
-      background-color: $navbar-hover-highlight;
-    }
+  &:hover, &:active {
+    color: #fff;
+    background: $navbar-hover-highlight;
   }
 }
-
 
 @media screen and (max-width: 1050px)  {
   .fixed-navbar {

@@ -72,12 +72,12 @@
       </div>
     </div>
 
-    <div class="mobile-navbar" ng-show="Main.mobileNavbarSelected" ng-click="Main.deactivateMobileNavbar()">
+    <div class="mobile-navbar" ng-show="Main.mobileNavbarSelected">
       <ul>
-        <li><a id="about-mobilenav" href="#about" ng-class="{highlight: waypoints.inAbout.down}">About Take The Lead</a></li>
-        <li><a id="bio-mobilenav" href="#bio" ng-class="{highlight: waypoints.inBio.down}">About The Trainer</a></li>
-        <li><a id="services-mobilenav" href="#services" ng-class="{highlight: waypoints.inServices.down}">Services and Pricing</a></li>
-        <li><a id="contact-mobilenav" href="#contact" ng-class="{highlight: waypoints.inContact.down}">Contact</a></li>
+        <li><a id="about-mobilenav" href="#about" ng-class="{highlight: waypoints.inAbout.down}" ng-click="Main.deactivateMobileNavbar()">About Take The Lead</a></li>
+        <li><a id="bio-mobilenav" href="#bio" ng-class="{highlight: waypoints.inBio.down}" ng-click="Main.deactivateMobileNavbar()">About The Trainer</a></li>
+        <li><a id="services-mobilenav" href="#services" ng-class="{highlight: waypoints.inServices.down}" ng-click="Main.deactivateMobileNavbar()">Services and Pricing</a></li>
+        <li><a id="contact-mobilenav" href="#contact" ng-class="{highlight: waypoints.inContact.down}" ng-click="Main.deactivateMobileNavbar()">Contact</a></li>
       </ul>
     </div>
 
