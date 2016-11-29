@@ -33,9 +33,9 @@
 #name-fixednav, #about-fixednav, #bio-fixednav, #services-fixednav, #contact-fixednav {
   @extend %nav-bar;
 
-    &:hover {
-      color: $navbar-hover-highlight;
-    }
+  &:hover {
+    color: $navbar-hover-highlight;
+  }
 }
 
 .ul-navbar {
