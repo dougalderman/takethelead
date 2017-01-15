@@ -222,7 +222,12 @@ gulp.task('copy-bower', function() {
 });
 
 gulp.task('copy-index', function() {
-  return gulp .src(['index.html'])
+  return gulp .src(['./app/index.html'])
+              .pipe(gulp.dest('dist'));
+});
+
+gulp.task('copy-robots', function() {
+  return gulp .src(['./app/robots.txt'])
               .pipe(gulp.dest('dist'));
 });
 
@@ -240,7 +245,7 @@ gulp.task('inject-dist-index', function() {
               .pipe(gulp.dest('dist'));
 });
 
-gulp.task('copy-assets', ['copy-index', 'copy-bower', 'copy-img']);
+gulp.task('copy-assets', ['copy-index', 'copy-robots', 'copy-bower', 'copy-img']);
 
 gulp.task('js-dist', ['jshint', 'minify-js']);
 
