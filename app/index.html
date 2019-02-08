@@ -187,28 +187,28 @@
               <div class="contact-form">
                 <form ng-submit="Main.contactForm()">
                   <div class="name">
-                    <input id="name" type="text" ng-model="Main.contact.name" placeholder="Name" ng-class="{highlight: Main.emptyField.name}">
+                    <input id="name" type="text" ng-model="Main.contact.name" placeholder="Name" ng-class="{highlight: Main.emptyField.name}" disabled>
                   </div>
                   <div class="phone">
-                    <input id="phone" type="tel" ng-model="Main.contact.phone" placeholder="Phone">
+                    <input id="phone" type="tel" ng-model="Main.contact.phone" placeholder="Phone" disabled>
                   </div>
                   <div class="email">
-                    <input id="email" type="email" ng-model="Main.contact.email" placeholder="Email" ng-class="{highlight: Main.emptyField.email}">
+                    <input id="email" type="email" ng-model="Main.contact.email" placeholder="Email" ng-class="{highlight: Main.emptyField.email}" disabled>
                   </div>
                   <div class="email-again">
-                    <input id="email-again" type="email" ng-model="Main.contact.emailAgain" placeholder="Re-enter Email" ng-class="{highlight: Main.emptyField.emailAgain}">
+                    <input id="email-again" type="email" ng-model="Main.contact.emailAgain" placeholder="Re-enter Email" ng-class="{highlight: Main.emptyField.emailAgain}" disabled>
                   </div>
                   <div class="match-error" ng-show="Main.emailMatchError">
                     Emails don't match
                   </div>
                   <div class="subject">
-                    <input id="subject" type="text" ng-model="Main.contact.subject" placeholder="Subject"></textarea>
+                    <input id="subject" type="text" ng-model="Main.contact.subject" placeholder="Subject" disabled></textarea>
                   </div>
                   <div class="message">
-                    <textarea id="message" ng-model="Main.contact.message" placeholder="Message" ng-class="{highlight: Main.emptyField.message}"></textarea>
+                    <textarea id="message" ng-model="Main.contact.message" placeholder="Message" ng-class="{highlight: Main.emptyField.message}" disabled></textarea>
                   </div>
                   <div class="submit" ng-hide="Main.inRecaptcha">
-                    <input class="button" type="submit" value="Submit">
+                    <input class="button" type="submit" value="Submit" disabled>
                   </div>
                   <div id="recaptcha-widget" ng-show="Main.inRecaptcha">
                   </div>

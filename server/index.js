@@ -32,8 +32,14 @@ app.post('/api/recaptcha/', recaptchaCtrl.create); // Verify recaptcha
 app.post('/api/contacts/', contactsCtrl.create); // Create new contact. Contacts collection.
 
 //DB and Server Init
-var mongoUri = process.env.TTL_MONGO_URI,
+var mongoUriPrefix = process.env.TTL_MONGO_URI_PREFIX,
+    mongoUriDBUser = process.env.TTL_MONGO_DBUSER,
+    mongoUriDBPw = process.env.TTL_MONGO_DBPW,
+    mongoUriDbSuffix = process.env.TTL_MONGO_URI_SUFFIX,
     port = (process.env.port || process.env.TTL_PORT);
+
+var mongoUri = mongoUriPrefix + encodeURIComponent(mongoUriDBUser) +
+    ':' + encodeURIComponent(mongoUriDBPw) + mongoUriDbSuffix;
 
 mongoose.set('debug', true);
 mongoose.connect(mongoUri);

@@ -47,10 +47,7 @@
 // LIBRARY INCLUDES
 //---------------------------
 var gulp            = require('gulp');
-var open            = require('gulp-open');
 var livereload      = require('gulp-livereload');
-var runSequence     = require('run-sequence');
-var changed         = require('gulp-changed');
 var concat          = require('gulp-concat');
 var clean           = require('gulp-clean');
 var sourcemaps      = require('gulp-sourcemaps');
@@ -60,7 +57,6 @@ var nodemon         = require('gulp-nodemon');
 var uglify          = require('gulp-uglify');
 var cleanCSS        = require('gulp-clean-css');
 var jshint          = require('gulp-jshint');
-var jshintStyle     = require('jshint-stylish');
 var inject          = require('gulp-inject');
 var postcss      = require('gulp-postcss');
 var sourcemaps   = require('gulp-sourcemaps');
@@ -82,6 +78,18 @@ var config = {
   sass: ['app/sass/*.scss'],
   sassPartials: ['app/sass/_*.scss'],
 };
+
+//---------------------------
+// SCRIPT TASKS
+//---------------------------
+
+
+gulp.task('js-hint', function (done) {
+  return gulp .src(config.js.concat(config.backEndJs))
+              .pipe(jshint())
+              .pipe(jshint.reporter('jshint-stylish'));
+});
+
 
 //---------------------------
 // DEV TASKS
@@ -106,7 +114,7 @@ gulp.task('reload-browser', function () {
 });
 
 gulp.task('clean-dev-css', function(done) {
-    return gulp .src(['app/css', 'app/tempcss'], {read: false})
+    return gulp .src(['app/css', 'app/tempcss'], {read: false, allowEmpty: true})
                 .pipe(clean());
 });
 
@@ -116,13 +124,12 @@ gulp.task('clean-temp-css', function(done) {
 });
 
 
-gulp.task('js-dev', ['jshint']);
+gulp.task('js-dev', gulp.series('js-hint'));
 
 gulp.task('inject-dev-index', function() {
 
   var cssSources = gulp.src(config.css, {read: false});
   var jsSources = gulp.src(config.js, {read: false});
-
 
   return gulp .src('app/index.html')
               .pipe(inject(cssSources, {ignorePath: 'app'}))
@@ -130,26 +137,10 @@ gulp.task('inject-dev-index', function() {
               .pipe(gulp.dest('app'));
 });
 
-//---------------------------
-// SCRIPT TASKS
-//---------------------------
-
-
-gulp.task('jshint', function (done) {
-  return gulp .src(config.js.concat(config.backEndJs))
-              .pipe(jshint())
-              .pipe(jshint.reporter('jshint-stylish'));
-});
 
 //---------------------------
 // STYLE TASKS
 //---------------------------
-
-gulp.task('sass-dev', ['sasslint', 'clean-dev-css'], function (done) {
-  return gulp .src(config.sass)
-              .pipe(sass.sync().on('error', sass.logError))
-              .pipe(gulp.dest('app/tempcss'));
-});
 
 gulp.task('sasslint', function() {
   var options = {
@@ -160,8 +151,14 @@ gulp.task('sasslint', function() {
               .pipe(sassLint())
               .pipe(sassLint.format())
               .pipe(sassLint.failOnError());
-              //.pipe(scsslint({ customReport: scssLintStyle }));
 });
+
+gulp.task('sass-dev',
+  gulp.series('sasslint', 'clean-dev-css', function () {
+  return gulp .src(config.sass)
+              .pipe(sass.sync().on('error', sass.logError))
+              .pipe(gulp.dest('app/tempcss'));
+}));
 
 gulp.task('autoprefixer', function () {
    return gulp.src('app/tempcss/*.css')
@@ -245,47 +242,42 @@ gulp.task('inject-dist-index', function() {
               .pipe(gulp.dest('dist'));
 });
 
-gulp.task('copy-assets', ['copy-index', 'copy-robots', 'copy-bower', 'copy-img']);
+gulp.task('copy-assets', gulp.parallel('copy-index', 'copy-robots', 'copy-bower', 'copy-img'));
 
-gulp.task('js-dist', ['jshint', 'minify-js']);
+gulp.task('js-dist', gulp.series('js-hint', 'minify-js'));
 
-gulp.task('css-dist', ['sasslint', 'minify-css']);
+gulp.task('css-dist', gulp.series('sasslint', 'minify-css'));
 
 
 //---------------------------
 // WATCHERS
 //---------------------------
 
-gulp.task('watch', ['watch-dev-html', 'watch-dev-js', 'watch-dev-sass']);
-
 gulp.task('watch-dev-html', function(done) {
-  return gulp.watch(config.html, ['reload-browser']);
+  return gulp.watch(config.html, gulp.series('reload-browser'));
 });
 
 gulp.task('watch-dev-js', function(done) {
-  return gulp.watch(config.js, ['reload-browser']);
+  return gulp.watch(config.js, gulp.series('reload-browser'));
 });
+
+gulp.task('sass-after-watch',
+  gulp.series('sass-dev', 'autoprefixer', 'clean-temp-css', 'reload-browser'));
 
 gulp.task('watch-dev-sass', function(done) {
-  return gulp.watch(config.sass.concat(config.sassPartials), ['sass-after-watch']);
+  return gulp.watch(config.sass.concat(config.sassPartials), gulp.series('sass-after-watch'));
 });
 
-gulp.task('sass-after-watch', function(done) {
-  runSequence('sass-dev', 'autoprefixer', 'clean-temp-css', 'reload-browser', done);
-});
+gulp.task('watch', gulp.parallel('watch-dev-html', 'watch-dev-js', 'watch-dev-sass'));
+
 
 //---------------------------
 // BUILD TASKS
 //---------------------------
 
-gulp.task('build', function(done) {
-  runSequence('js-dev', 'sass-dev', 'autoprefixer', 'clean-temp-css', 'inject-dev-index', done);
-});
+gulp.task('default',
+  gulp.series('js-dev', 'sass-dev', 'autoprefixer', 'clean-temp-css', 'inject-dev-index', gulp.parallel('watch', 'start-server')));
 
-gulp.task('default', function(done) {
-  runSequence('js-dev', 'sass-dev', 'autoprefixer', 'clean-temp-css', 'inject-dev-index', ['watch', 'start-server'], done);
-});
+gulp.task('dist',
+  gulp.series('clean-dist', 'js-dist', 'css-dist', 'dist-autoprefixer', 'clean-dist-tempcss', 'copy-assets', 'inject-dist-index'));
 
-gulp.task('dist', function(done) {
-  runSequence('clean-dist', 'js-dist', 'css-dist', 'dist-autoprefixer', 'clean-dist-tempcss', 'copy-assets', 'inject-dist-index', done);
-});
