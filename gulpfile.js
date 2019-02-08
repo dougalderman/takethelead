@@ -119,7 +119,7 @@ gulp.task('clean-dev-css', function(done) {
 });
 
 gulp.task('clean-temp-css', function(done) {
-    return gulp .src('app/tempcss', {read: false})
+    return gulp .src('app/tempcss', {read: false, allowEmpty: true})
                 .pipe(clean());
 });
 
@@ -174,13 +174,13 @@ gulp.task('autoprefixer', function () {
 
 gulp.task('clean-dist', function () {
   return gulp
-        .src('dist', {read: false})
+        .src('dist', {read: false, allowEmpty: true})
         .pipe(clean());
 });
 
 gulp.task('clean-dist-tempcss', function () {
   return gulp
-        .src('dist/tempcss', {read: false})
+        .src('dist/tempcss', {read: false, allowEmpty: true})
         .pipe(clean());
 });
 
