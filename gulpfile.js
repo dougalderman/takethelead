@@ -21,7 +21,6 @@
 |    - clean-dist
 |    - minify-js
 |    - minify-css
-|    - copy-bower
 |    - copy-index
 |    - copy-img
 |    - inject-dist-index
@@ -66,13 +65,10 @@ var config = {
   html: ['./app/index.html', './app/**/*.html'],
   js: ['app/js/**/*.js', 'app/js/*.js', ],
   backEndJs: ['server/*.js', 'server/**/*.js'],
-  bower: ['app/bower_components/**/*'],
   img: ['app/images/*.*', 'app/images/**/*.*'],
   css: ['app/css/*.css'],
   sass: ['app/sass/*.scss'],
-  sassPartials: ['app/sass/_*.scss'],
-  pdf: ['app/research_paper/*.pdf'],
-  favicon: ['app/favicon.ico']
+  sassPartials: ['app/sass/_*.scss']
 };
 
 //---------------------------
@@ -172,24 +168,9 @@ gulp.task('minify-css', function () {
       .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('copy-bower', function() {
-  return gulp .src(config.bower)
-              .pipe(gulp.dest('dist/bower_components'));
-});
-
 gulp.task('copy-img', function() {
   return gulp .src(config.img)
               .pipe(gulp.dest('dist/images'));
-});
-
-gulp.task('copy-pdf', function() {
-  return gulp .src(config.pdf)
-              .pipe(gulp.dest('dist/research_paper'));
-});
-
-gulp.task('copy-favicon', function() {
-  return gulp .src(config.favicon)
-              .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('inject-dist-index', function() {
@@ -201,7 +182,7 @@ gulp.task('inject-dist-index', function() {
 });
 
 gulp.task('copy-assets',
-  gulp.parallel('inject-dist-index', 'copy-bower', 'copy-img', 'copy-pdf', 'copy-favicon'));
+  gulp.parallel('inject-dist-index', 'copy-img'));
 
 gulp.task('js-dist',
   gulp.series('jshint', 'minify-js'));
