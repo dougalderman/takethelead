@@ -41,6 +41,8 @@ var mongoUriPrefix = process.env.TTL_MONGO_URI_PREFIX,
 var mongoUri = mongoUriPrefix + encodeURIComponent(mongoUriDBUser) +
     ':' + encodeURIComponent(mongoUriDBPw) + mongoUriDbSuffix;
 
+console.log('mongoUri: ', mongoUri);
+
 mongoose.set('debug', true);
 mongoose.connect(mongoUri);
 mongoose.connection
@@ -51,3 +53,4 @@ mongoose.connection
       console.log('Listening on port ' + port);
     });
   });
+  
