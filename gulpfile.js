@@ -151,7 +151,7 @@ gulp.task('clean-dist', function () {
 gulp.task('minify-js', function () {
   return gulp
     .src(config.js)
-    .pipe(concat('hm.min.js'))
+    .pipe(concat('takethelead.min.js'))
     .pipe(sourcemaps.init())
     .pipe(uglify({mangle: false}))
     .pipe(sourcemaps.write('./'))
@@ -161,9 +161,9 @@ gulp.task('minify-js', function () {
 gulp.task('minify-css', function () {
   return gulp.src(config.sass)
       .pipe(sass.sync().on('error', sass.logError))
-      .pipe(concat('hm.min.css'))
+      .pipe(concat('takethelead.min.css'))
       .pipe(sourcemaps.init())
-        .pipe(cleanCSS())
+      .pipe(cleanCSS())
       .pipe(sourcemaps.write('./'))
       .pipe(gulp.dest('dist/css'));
 });
@@ -174,7 +174,7 @@ gulp.task('copy-img', function() {
 });
 
 gulp.task('inject-dist-index', function() {
-  var min = gulp.src(['./dist/js/hm.min.js', './dist/css/hm.min.css'], {read: false});
+  var min = gulp.src(['./dist/js/takethelead.min.js', './dist/css/takethelead.min.css'], {read: false});
 
   return gulp .src(config.html)
               .pipe(inject(min, {ignorePath: 'dist'}))
